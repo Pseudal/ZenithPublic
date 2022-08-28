@@ -90,4 +90,12 @@ public function getAllArray()
      ->getArrayResult();
     ;
 }
+public function getCount()
+{
+    return $this->createQueryBuilder('c')
+    ->select('count(c.id)')
+    ->getQuery()
+    ->getSingleScalarResult();
+    ;
+}
 }

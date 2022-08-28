@@ -112,4 +112,12 @@ class ProjetImageRepository extends ServiceEntityRepository
 //            ->getOneOrNullResult()
 //        ;
 //    }
+public function getCount()
+{
+    return $this->createQueryBuilder('c')
+    ->select('count(c.id)')
+    ->getQuery()
+    ->getSingleScalarResult();
+    ;
+}
 }

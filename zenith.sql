@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : lun. 22 août 2022 à 23:09
+-- Généré le : sam. 27 août 2022 à 22:35
 -- Version du serveur : 10.4.24-MariaDB
 -- Version de PHP : 8.1.5
 
@@ -192,7 +192,8 @@ INSERT INTO `doctrine_migration_versions` (`version`, `executed_at`, `execution_
 ('DoctrineMigrations\\Version20220821010745', '2022-08-21 03:11:50', 44),
 ('DoctrineMigrations\\Version20220821152555', '2022-08-21 17:26:22', 576),
 ('DoctrineMigrations\\Version20220822084633', '2022-08-22 10:46:39', 1695),
-('DoctrineMigrations\\Version20220822170254', '2022-08-22 19:03:01', 367);
+('DoctrineMigrations\\Version20220822170254', '2022-08-22 19:03:01', 367),
+('DoctrineMigrations\\Version20220827203151', '2022-08-27 22:32:09', 2323);
 
 -- --------------------------------------------------------
 
@@ -202,8 +203,17 @@ INSERT INTO `doctrine_migration_versions` (`version`, `executed_at`, `execution_
 
 CREATE TABLE `emails` (
   `id` int(11) NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `new` tinyint(1) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `emails`
+--
+
+INSERT INTO `emails` (`id`, `email`, `new`) VALUES
+(1, 'Email@email.com', 0),
+(2, 'Email@email.com2', 0);
 
 -- --------------------------------------------------------
 
@@ -568,7 +578,7 @@ ALTER TABLE `custom_web_site_text`
 -- AUTO_INCREMENT pour la table `emails`
 --
 ALTER TABLE `emails`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pour la table `footer`

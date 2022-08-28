@@ -122,4 +122,12 @@ public function getOneById($value): ?ClientImage
        ->getOneOrNullResult()
    ;
 }
+public function getCount()
+{
+    return $this->createQueryBuilder('c')
+    ->select('count(c.id)')
+    ->getQuery()
+    ->getSingleScalarResult();
+    ;
+}
 }

@@ -63,5 +63,13 @@ class CategorieRepository extends ServiceEntityRepository
         ->getArrayResult();
        ;
    }   
-
+   
+   public function getCount()
+   {
+       return $this->createQueryBuilder('c')
+       ->select('count(c.id)')
+       ->getQuery()
+       ->getSingleScalarResult();
+       ;
+   }
 }

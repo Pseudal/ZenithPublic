@@ -12,7 +12,7 @@ use Doctrine\ORM\Mapping as ORM;
         "post",
     ],
     itemOperations: [
-        
+        "get"
     ],
 )]
 class Emails
