@@ -25,6 +25,7 @@ class EmailsController extends AbstractController
             $thismail->setNew(0);
             $entityManager->flush();
         }
+        
         return $this->render('admin/emails/index.html.twig', [
             'emails' => $emailsRepository->getAllDesc(),
         ]);

@@ -29,11 +29,6 @@
             <th>Categorie</th>
             <th>Titre</th>
             <th>Texte</th>
-            {# <th>Description</th>
-            <th>Demande</th>
-            <th>Defi</th>
-            <th>Reponse</th>
-            <th>Focus</th> #}
             <th>Debut</th>
             <th>Fin</th>
             <th>action</th>
@@ -49,11 +44,6 @@
             <td>{% if projet.categorie %}{% for categorie in projet.categorie %} {{ categorie.categorie }}</br> {% endfor %}{% else %} N/A {% endif %}</td>
             <td>{% if projet.mission %}{{ projet.mission }} {% else %} N/A {% endif %}</td>
             <td><a class="btn btn-primary btnaction" href="{{path('pagedemerde2', {'id': projet.id })}}">voir</a></td>
-            {# <td>{% if projet.description %}{{ projet.description }} {% else %} N/A {% endif %}</td>
-            <td>{% if projet.demande %}{{ projet.demande }} {% else %} N/A {% endif %}</td>
-            <td>{% if projet.defi %}{{ projet.defi }} {% else %} N/A {% endif %}</td>
-            <td>{% if projet.action %}{{ projet.action }} {% else %} N/A {% endif %}</td>
-            <td>{% if projet.focus %}{{ projet.focus }} {% else %} N/A {% endif %}</td> #}
             <td>{% if projet.debut %}{{ projet.debut.format('d/m/Y') }} {% else %} N/A {% endif %}</td>
             <td>{% if projet.fin %}{{ projet.fin.format('d/m/Y') }} {% else %} N/A {% endif %}</td>
             <td>

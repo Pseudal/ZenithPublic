@@ -11,7 +11,7 @@ function ClientpageThree() {
 
 				<div className='wrapperDarkBlueClient'>
 					<div className='containerFlex'>
-						<img className='contain' src="https://i.imgur.com/7cA64Du.jpg" alt=""/>
+						<img className='contain' src="/zenith/images/7cA64Du.jpg" alt=""/>
 					</div>
 				</div>
 

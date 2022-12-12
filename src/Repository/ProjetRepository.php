@@ -70,6 +70,16 @@ class ProjetRepository extends ServiceEntityRepository
         ->getQuery()
         ->getArrayResult();
    }
+
+   public function getAllPagination($value)
+   {
+       return $this->createQueryBuilder('c')
+        ->orderBy('c.id', 'DESC')
+        ->getQuery()
+        ->setFirstResult(($value-1)*20)
+        ->setMaxResults(20)
+        ->getArrayResult();
+   }
    
    public function getNull(): array
    {
@@ -86,6 +96,29 @@ class ProjetRepository extends ServiceEntityRepository
        ->select('count(c.id)')
        ->getQuery()
        ->getSingleScalarResult();
+   }
+
+   public function findByExampleFieldArray($value): array
+   {
+       return $this->createQueryBuilder('c')
+           ->select("c.id", "c.projet", "c.mission")
+           ->andWhere('c.id  = :val')
+           ->setParameter('val', $value)
+       //    ->setMaxResults(10)
+           ->getQuery()
+           ->getArrayResult();
+       ;
+   }
+
+   public function getSearch($value): array
+   {
+       return $this->createQueryBuilder('c')
+           ->select("c.id", "c.projet", "c.mission")
+           ->andWhere('c.projet LIKE :val OR c.mission LIKE :val')
+           ->setParameter('val', '%'.$value.'%')
+       //    ->setMaxResults(10)
+           ->getQuery()
+           ->getArrayResult();
        ;
    }
 

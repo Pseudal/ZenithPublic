@@ -5,6 +5,7 @@ namespace App\Entity;
 use Doctrine\DBAL\Types\Types;
 //use App\Entity\TagClient;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\JoinTable;
 use App\Repository\ClientRepository;
 use Doctrine\ORM\Mapping\JoinColumn;
 use Doctrine\Common\Collections\Collection;
@@ -67,6 +68,7 @@ class Client
     private ?string $elementprecision = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Groups("Client")]
     private ?string $temoignage = null;
 
     #[ORM\ManyToOne(inversedBy: 'clients')]
@@ -90,7 +92,7 @@ class Client
 
     public function __construct()
     {
-        $this->rojet = new ArrayCollection();
+        $this->projet = new ArrayCollection();
         $this->clientImages = new ArrayCollection();
         $this->categorie = new ArrayCollection();
     }

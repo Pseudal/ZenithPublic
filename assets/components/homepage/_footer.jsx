@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import { Link } from "react-router-dom";
+import { Element } from 'react-scroll';
+import { Parallax } from 'react-parallax';
 
 function Footer() {
-	//INFO https://www.freecodecamp.org/news/beginner-react-project-build-basic-forms-using-react-hooks/
 	const [values, setValues] = useState({
 		email: '',
 	});
@@ -27,13 +28,14 @@ function Footer() {
 		fetch('/api/emails', requestOptions)
 			.then(response => response.json())
 	};
-
 		return (
 			<>
-				<div className="demiblocFooter" alt="footer">
-      		        <div className="demibloc2">
+			      <Parallax bgImage="/zenith/images/nxsX0oGc.jpeg" blur={{ min: -1, max: 3 }} strength={0}>
+
+				<div id="footer" className="demiblocFooter" alt="footer">
+      		        <div className="demibloc2" >
 						<div className="emptyS"></div>
-						<h2 className="titreE light letterSpacing marginStop">ET SI ON SE LANÇAIT ?</h2>
+						<h2  className="titreE light letterSpacing marginStop">ET SI ON SE LANÇAIT ?</h2>
 						<button className="btnL center light letterSpacingM">
 							<Link to="/contact" className="textDeco">CONTACT</Link>
 						</button>
@@ -41,7 +43,7 @@ function Footer() {
 
 					</div>
 				</div>
-
+				<Element name="scroll-to-element9" className="element"></Element>
 				<div className="demiblocFooter2" alt="footer">
 					<div className="demibloc2">
 						<div className="parent4">
@@ -56,13 +58,12 @@ function Footer() {
       						<a className="fb2" href='https://www.facebook.com/AGENCEZENITH/'></a>
       						<a className="insta2" href='https://www.instagram.com/agencezenith/?hl=fr'></a>
       						<a className="linkedin2" href='https://www.linkedin.com/company/agence-zenith/'></a>
-    						</div>
+							  </div>
 								<form onSubmit={handleSubmit} >
-									<h4 className="titreD medium letterSpacing marginBottom ">NEWSLETTER</h4>
+									<h4 className="titreD medium letterSpacing marginBottom "> NEWSLETTER</h4>
 									<input className="inputMail center"
 									type="email" 
 									id="email" 
-									//pattern=".+@globex\.com" 
 									size="30" name="email" 
 									value={values.email}
 									onChange={handleEmailInputChange}
@@ -77,10 +78,10 @@ function Footer() {
 										<a href="" className="footerText light text-h5">ACCUEIL</a>
 									</li>
 									<li className='li2'>
-										<a href="" className="footerText light text-h5">PROJETS</a>
+										<a href="" className="footerText light text-h5">CLIENT</a>
 									</li>
 									<li className='li2'>
-										<a href="" className="footerText light text-h5">ÉQUIPE</a>
+										<a href="" className="footerText light text-h5">PROJETS</a>
 									</li>
 									<li className='li2'>
 										<a href="" className="footerText light text-h5">CONTACT</a>
@@ -92,6 +93,9 @@ function Footer() {
 					</div>
 				</div>
           
+
+
+			</Parallax>
 			</>
 		);
 	}

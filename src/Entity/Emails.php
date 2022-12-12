@@ -12,7 +12,7 @@ use Doctrine\ORM\Mapping as ORM;
         "post",
     ],
     itemOperations: [
-        "get"
+        "get" => ["security" => "is_granted('ROLE_ADMIN')"],
     ],
 )]
 class Emails

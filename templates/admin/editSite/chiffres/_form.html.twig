@@ -9,7 +9,7 @@
                 <div class="col">
                 <div class="form-outline form-white">
                     {{ form_widget(form.collab, {'attr': {'class': 'form-control'}}) }}
-                    <label class="form-label" for="footer_adresse">Adresse</label>
+                    <label class="form-label" for="footer_adresse">collaborateurs</label>
                 </div>
                 </div>
             </div>
@@ -17,18 +17,18 @@
             <!-- Email input -->
             <div class="form-outline mb-4 form-white">
                     {{ form_widget(form.digital, {'attr': {'class': 'form-control'}}) }}
-                    <label class="form-label" for="footer_email">Email</label>
+                    <label class="form-label" for="footer_email">Digital</label>
             </div>
 
             <!-- Password input -->
             <div class="form-outline mb-4 form-white">
                     {{ form_widget(form.photo, {'attr': {'class': 'form-control'}}) }}
-                    <label class="form-label" for="footer_tel">Tel</label>
+                    <label class="form-label" for="footer_tel">Photo</label>
             </div>
 
             <div class="form-outline mb-4 form-white">
                     {{ form_widget(form.video, {'attr': {'class': 'form-control'}}) }}
-                    <label class="form-label" for="footer_tel">Tel</label>
+                    <label class="form-label" for="footer_tel">Video</label>
             </div>
 
             <button class="btn btn-block btn-primary">{{ button_label|default('Save') }}</button>

@@ -54,10 +54,12 @@ class ProjetImageRepository extends ServiceEntityRepository
        ;
    }
 
-   public function findLast(): array
+   public function findLast($projet): array
    {
        return $this->createQueryBuilder('c')
        ->orderBy('c.id', 'DESC')
+       ->andWhere('c.projet = :val')
+       ->setParameter('val', $projet)
        ->setMaxResults(1)
         //    ->setMaxResults(10)
         ->getQuery()
@@ -103,6 +105,16 @@ class ProjetImageRepository extends ServiceEntityRepository
        ;
     }
 
+    public function checkCreation($value): ?ProjetImage
+    {
+       return $this->createQueryBuilder('c')
+           ->andWhere('c.creation = 1 AND c.projet = :val')
+           ->setParameter('val', $value)
+           ->getQuery()
+           ->getOneOrNullResult()
+       ;
+    }
+
 //    public function findOneBySomeField($value): ?ProjetImage
 //    {
 //        return $this->createQueryBuilder('c')
@@ -118,6 +130,18 @@ public function getCount()
     ->select('count(c.id)')
     ->getQuery()
     ->getSingleScalarResult();
+    ;
+}
+
+public function findByExampleFieldArray($value): array
+{
+    return $this->createQueryBuilder('c')
+        ->andWhere('c.projet  = :val')
+        ->setParameter('val', $value)
+        ->orderBy('c.id', 'ASC')
+     //    ->setMaxResults(10)
+        ->getQuery()
+        ->getArrayResult();
     ;
 }
 }

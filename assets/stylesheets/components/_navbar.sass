@@ -1,5 +1,5 @@
 #menu__toggle
-  margin: 0
+  margin: 0px
   display: none
 #menu__toggle 
   opacity: 0
@@ -20,13 +20,16 @@
   transform: translateX(-330px)!important
 
 .menu__btn 
-  position: fixed
-  top: 64px
-  left: 95%
-  width: 32px
-  height: 32px
-  cursor: pointer
   z-index: 100
+  position: fixed
+  left: 94%
+  margin-right: 64px
+  
+  margin-top: 64px
+  padding-top: 12px
+  height: 40px
+  width: 32px
+  cursor: pointer
 
 .menu__btn > span,
 .menu__btn > span::before,
@@ -58,11 +61,11 @@
   // transform: translate(-150%)
   transition: transform 0.5s ease-in-out
 
-.menu__toggle input[type="checkbox"]:checked ~ .menu__item
-  transform: translateX(0)
+
 
 
 .menu__item
-  margin-top: 32px
+  margin-top: 48px
 .menu__item1
-  margin-top: 92px
+  margin-top: 192px
+
