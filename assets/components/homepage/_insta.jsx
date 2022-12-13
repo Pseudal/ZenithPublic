@@ -75,9 +75,12 @@ function Instaflux() {let insta = useRef(null);
                   scrolling="no"
                   allowtransparency="true"
                   class="lightwidget-widget"
+                  width="100%"
+                  style={{width:"100%"}}
                 ></iframe>
               </div>
               <h4
+                style={{marginTop:"100px"}}
                 className="light letterSpacing container center marginTopXL"
                 data-aos="fade-up"
                 data-aos-duration="1000"
