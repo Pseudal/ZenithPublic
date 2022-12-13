@@ -34,7 +34,7 @@ class ProjetImageController extends AbstractController
         $thisproject = $projetRepository->find(($request->get('id')));
 
         
-        $thisEntity = $projetImageRepository->findLast();
+        $thisEntity = $projetImageRepository->findLast($id);
         if($thisEntity){
             $pres[1] = $projetImageRepository->checkHeader($thisEntity[0]->getProjet()->getId());
             $pres[2] = $projetImageRepository->checkSecondaire($thisEntity[0]->getProjet()->getId());
@@ -93,10 +93,10 @@ class ProjetImageController extends AbstractController
         if(isset($file)){
             try {
                 $projetImage = new ProjetImage();
-                $projetImage->setProjet($thisprojet)->setHeader(false)->setSecondaire(false)->setFocus(false)->setVisible(true);
+                $projetImage->setProjet($thisprojet)->setHeader(false)->setSecondaire(false)->setFocus(false)->setVisible(true)->setCreation(false);
                 $projetImage->setImageFile($file);
                 $projetImageRepository->add($projetImage, true);
-                $results = $projetImageRepository->findLast();
+                $results = $projetImageRepository->findLast($returnid);
         
                 
                 //changer taille image
@@ -295,6 +295,39 @@ class ProjetImageController extends AbstractController
                 return new JsonResponse(['data' => "false"]);
             }else{
                 $thisEntity->setFocus(1);
+                $entityManager->flush();
+                return new JsonResponse(['data' => "true"]);
+            }
+        }
+    } 
+
+    #[Route('/setcreation/{id}', name: 'setcreation', methods: ['GET', 'POST'])]
+    public function setcreation(ProjetImageRepository $projetImageRepository, Request $request, ProjetRepository $projet, Session $session, ManagerRegistry $doctrine): Response
+    {
+
+        $id = $request->request->get('id');
+        $entityManager = $doctrine->getManager();
+        $thisEntity = $entityManager->getRepository(ProjetImage::class)->find($id);
+        $checkHeader = $projetImageRepository->checkCreation($thisEntity->getProjet()->getId());
+
+        if (!$thisEntity) {
+            throw $this->createNotFoundException(
+                'No product found for id '.$id
+            );
+        }
+
+        if($checkHeader && ($checkHeader->getId() != $thisEntity->getId())){            
+            $checkHeader->setCreation(0);
+            $thisEntity->setCreation(1);
+            $entityManager->flush();
+            return new JsonResponse(['data' => "true", 'msg' => $checkHeader->getId()]);
+        }else{
+            if($thisEntity->isCreation()){
+                $thisEntity->setCreation(0);
+                $entityManager->flush();
+                return new JsonResponse(['data' => "false"]);
+            }else{
+                $thisEntity->setCreation(1);
                 $entityManager->flush();
                 return new JsonResponse(['data' => "true"]);
             }

@@ -4,7 +4,8 @@ import 'aos/dist/aos.css';
 import { Link } from "react-router-dom";
 
 
-function ClientpageOne() {
+function ClientpageOne(data) {
+	console.log(data)
 	AOS.init()
 		return (
 			<>
@@ -12,8 +13,8 @@ function ClientpageOne() {
 
 			<div className="background1" alt="homepage">
 
-				<video playsInline autoPlay muted loop>
-					<source src="/zenith/video/videobg.mp4" type="video/mp4"></source>
+			<video playsInline autoPlay muted loop>
+				<source src="/zenith/video/videobg.mp4" type="video/mp4"></source>
 				</video>
 
 				<div className="opacityBlue">
@@ -37,7 +38,7 @@ function ClientpageOne() {
 						</div>
 
 						<div className="containerCenter3" data-aos="fade-up">
-							<h4 className="light letterSpacingS  discoverClient2">REINVENTER UNE IDENTITÉ <br /> DE MARQUE</h4>
+							<h4 style={{ textTransform: 'uppercase'}} className="light letterSpacingS  discoverClient2">{data.data.mission}</h4>
 						</div>
 
 						<div className="containerCenter" data-aos="fade-up">
