@@ -2,3 +2,11 @@ Categorie projet
 
 
 creation admin switch creation + image creation
+
+augmenter vitesse apparition
+
+baisser blur
+
+meme taille pour les titre
+
+footer 
