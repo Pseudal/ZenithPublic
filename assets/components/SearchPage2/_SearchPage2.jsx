@@ -7,6 +7,7 @@ import SearchPageTwo2 from "./_SearchPageTwo2";
 import MiniFooter from "../Homepage/_miniFooter";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import "../../styles/font.css"
 
 
 function SearchPage2() {

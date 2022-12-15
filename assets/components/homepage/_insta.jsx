@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import { Parallax } from 'react-parallax';
 import "../../stylesheets/bulma/helpers/spacing.sass"
+import "../../styles/font.css"
 
 function Instaflux() {let insta = useRef(null);
   useEffect(() => {
@@ -26,7 +27,6 @@ function Instaflux() {let insta = useRef(null);
 				</video> */}
         <Parallax
           bgImage="/zenith/images/Z1zIJCKk.jpeg"
-          blur={{ min: -1, max: 3 }}
           strength={800}
         >
           <div
@@ -34,6 +34,8 @@ function Instaflux() {let insta = useRef(null);
             data-aos-mirror="true"
             data-aos-once="false"
             data-aos-anchor-placement="top-center"
+            data-aos-duration="1500"
+            style={{paddingTop: '50px'}}
           >
             <div className="wrapper2">
               <h1
@@ -74,7 +76,7 @@ function Instaflux() {let insta = useRef(null);
                   src="//lightwidget.com/widgets/f2c83bb613395c9fa7bd7a355247d3cf.html" 
                   scrolling="no"
                   allowtransparency="true"
-                  class="lightwidget-widget"
+                  className="lightwidget-widget"
                   width="100%"
                   style={{width:"100%"}}
                 ></iframe>

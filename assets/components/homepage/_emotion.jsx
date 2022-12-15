@@ -1,5 +1,6 @@
 import React from "react";
 import { Parallax } from 'react-parallax';
+import "../../styles/font.css"
 
 function Emotion() {
   return (
@@ -12,10 +13,10 @@ function Emotion() {
         {/* <video playsInline autoPlay muted loop>
           <source src="/zenith/video/videobg2.mp4" type="video/mp4"></source>
         </video> */}
-        <Parallax bgImage="/zenith/images/Z1zIJCKk.jpeg" blur={{ min: -1, max: 3 }} strength={800}>
+        <Parallax bgImage="/zenith/images/Z1zIJCKk.jpeg" strength={800}>
 
         <div className="" style={{paddingTop: '50px'}}>
-        <div data-aos="zoom-in" data-aos-mirror="true"data-aos-once="false"data-aos-anchor-placement="top-center">  
+        <div data-aos="zoom-in" data-aos-mirror="true"data-aos-once="false"data-aos-anchor-placement="top-center" data-aos-duration="1500">  
           <div className="wrapper2">
             <div className="container2 ">
               <h1

@@ -3,6 +3,7 @@ import RsButton from '../_rsButton';
 import LinesTop from '../_linesTop';
 import LinesBottom from '../_linesBottom';
 import ContactPageOne from './_contactpageOne';
+import "../../styles/font.css"
 
 
 

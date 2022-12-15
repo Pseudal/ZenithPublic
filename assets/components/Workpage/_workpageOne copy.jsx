@@ -3,6 +3,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { Link } from "react-router-dom";
 import { Button, Menu, MenuItem } from '@mui/material';
+import "../../styles/font.css"
 
 function WorkpageOne(cat) {
 	const [words, setWords] = useState([]);

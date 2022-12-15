@@ -1,3 +1,4 @@
+ import "../styles/font.css"
 function LinesBottom() {
 	return ( 
 		<>

@@ -7,6 +7,7 @@ import ClientpageFive from './_clientpageFive';
 import ClientpageSix from './_clientpageSix';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import "../../styles/font.css"
 
 function Clientpage() {
 	const { id } = useParams();

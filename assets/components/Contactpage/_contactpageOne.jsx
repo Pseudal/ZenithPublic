@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { Link } from "react-router-dom";
+import "../../styles/font.css"
 
 
 function ContactPageOne() {
@@ -74,21 +75,21 @@ function ContactPageOne() {
 									vous dans un délai de 24h.</h6>
 								</div>
 								<form onSubmit={handleSubmit}>
-									<div class="form__group field  divC1">
-										<input type="input" class="form__field" placeholder="Name" name="name" id='name' value={values.name}onChange={handleInputChange} required></input>
-										<label for="name" class="form__label">Votre nom</label>
+									<div className="form__group field  divC1">
+										<input type="input" className="form__field" placeholder="Name" name="name" id='name' value={values.name}onChange={handleInputChange} required></input>
+										<label for="name" className="form__label">Votre nom</label>
 
 									</div>
 
-									<div class="form__group2 field divC2">
-										<input type="input" class="form__field" placeholder="email" name="email" id='email' value={values.email} onChange={handleInputChange} required />
-										<label for="name" class="form__label">Votre adresse e-mail</label>
+									<div className="form__group2 field divC2">
+										<input type="input" className="form__field" placeholder="email" name="email" id='email' value={values.email} onChange={handleInputChange} required />
+										<label for="name" className="form__label">Votre adresse e-mail</label>
 
 									</div>
 
-									<div class="textarea__group field divC3">
-										<textarea type="input" class="form__field" placeholder="message" name="message" id='message' value={values.message} onChange={handleInputChange} required />
-										<label for="name" class="form__label">Votre besoin</label>
+									<div className="textarea__group field divC3">
+										<textarea type="input" className="form__field" placeholder="message" name="message" id='message' value={values.message} onChange={handleInputChange} required />
+										<label for="name" className="form__label">Votre besoin</label>
 
 									</div>
 									<input type="submit" className="textDeco" value="Submit"/>

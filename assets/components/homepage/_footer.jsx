@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Link } from "react-router-dom";
 import { Element } from 'react-scroll';
 import { Parallax } from 'react-parallax';
+import "../../styles/font.css"
 
 function Footer() {
 	const [values, setValues] = useState({
@@ -30,7 +31,7 @@ function Footer() {
 	};
 		return (
 			<>
-			      <Parallax bgImage="/zenith/images/nxsX0oGc.jpeg" blur={{ min: -1, max: 3 }} strength={0}>
+			    <Parallax bgImage="/zenith/images/nxsX0oGc.jpeg" strength={0}>
 
 				<div id="footer" className="demiblocFooter" alt="footer">
       		        <div className="demibloc2" >

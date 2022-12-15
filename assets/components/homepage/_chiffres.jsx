@@ -1,10 +1,11 @@
 import React from "react";
 import { Parallax } from "react-parallax";
+import "../../styles/font.css"
 
 function Chiffres() {
   return (
     <>
-	<Parallax bgImage="/zenith/images/Z1zIJCKk.jpeg" blur={{ min: -1, max: 3 }} strength={800}>
+	<Parallax bgImage="/zenith/images/Z1zIJCKk.jpeg" strength={800}>
       <div
         // style={{ backgroundImage: "url(/zenith/images/x9nes5V.jpg)" }}
         className="demibloc"

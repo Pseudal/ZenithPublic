@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Element } from "react-scroll";
 import { Parallax } from 'react-parallax';
+import "../../styles/font.css"
 
 function Creation(item) {
   let slider = []
@@ -34,14 +35,15 @@ function Creation(item) {
 					<source src="/zenith/video/videobg4.mp4" type="video/mp4"></source>
 				</video> */}
       {/* <Element name="scroll-to-element4" className="element"></Element> */}
-      <Parallax bgImage="/zenith/images/Z1zIJCKk.jpeg" blur={{ min: -1, max: 3 }} strength={800}>
+      <Parallax bgImage="/zenith/images/Z1zIJCKk.jpeg" strength={800}>
 
-      <div className="" style={{paddingTop: '40px'}}>
+      <div className="" style={{paddingTop: '50px'}}>
         <div
           data-aos="zoom-in"
           data-aos-mirror=""
           data-aos-once="false"
           data-aos-anchor-placement=""
+          data-aos-duration="1500"
         >
           <div className="wrapper2">
             <h1

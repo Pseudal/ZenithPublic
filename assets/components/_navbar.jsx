@@ -1,7 +1,8 @@
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { Link } from "react-router-dom";
-import {useState} from 'react'
+import {useState} from 'react' 
+import "../styles/font.css"
 
 function navbar() {
 

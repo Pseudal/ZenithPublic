@@ -2,6 +2,7 @@ import React from 'react'
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Parallax } from 'react-parallax';
+import "../../styles/font.css"
 
 function Vision()  {
 
@@ -15,8 +16,8 @@ function Vision()  {
 
       <Parallax bgImage="/zenith/images/aWELhk8A.jpeg" strength={0}>
 
-      <div className="" style={{paddingTop: '200px'}}>
-      <div data-aos="zoom-in" data-aos-mirror="true"data-aos-once="false"data-aos-anchor-placement="top-center">
+      <div className="" style={{paddingTop: '50px'}}>
+      <div data-aos="zoom-in" data-aos-mirror="true"data-aos-once="false"data-aos-anchor-placement="top-center"data-aos-duration="1500">
         <div className="wrapper" style={{height:"1000px"}}>
           <h1 className="titreA medium letterSpacing marginStop" data-aos="fade-up" data-aos-duration="1000">VISION</h1>
           <h6 className="light letterSpacingS sousTitre" data-aos="fade-up" data-aos-duration="1000">UNE RENCONTRE QUI CHANGE TOUT</h6>

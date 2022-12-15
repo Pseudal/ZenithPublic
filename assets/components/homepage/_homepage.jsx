@@ -3,6 +3,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { Element } from "react-scroll";
 import { Parallax } from 'react-parallax';
+import "../../styles/font.css"
 
 function Homepage() {
   AOS.init();
@@ -13,7 +14,7 @@ function Homepage() {
       <video playsInline autoPlay muted loop>
 					<source src="/zenith/video/videobg.mp4" type="video/mp4"></source>
 				</video> 
-      {/* <Parallax bgImage="https://images.unsplash.com/photo-1502134249126-9f3755a50d78?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" blur={{ min: -1, max: 3 }} strength={400}> */}
+      {/* <Parallax bgImage="https://images.unsplash.com/photo-1502134249126-9f3755a50d78?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" strength={400}> */}
 
       <div className="opacityBlue">
         <div className="wrapper">

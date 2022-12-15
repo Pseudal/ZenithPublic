@@ -6,6 +6,7 @@ import LinesBottom from '../_linesBottom';
 import WorkpageClientTwo from './_workpageClientTwo';
 
 import { useEffect, useState } from "react";
+import "../../styles/font.css"
 
 
 function WorkpageClient() {

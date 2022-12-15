@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react"
-import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
+import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll' 
+import "../styles/font.css"
 
 //import scrollIntoView from 'scroll-into-view-if-needed'
 import Homepage from './Homepage/_homepage';

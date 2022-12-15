@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Parallax } from 'react-parallax';
+import "../../styles/font.css"
 
 function Satisfaction() {
 	const [error, setError] = useState(null);
@@ -40,9 +41,9 @@ function Satisfaction() {
       <video playsInline autoPlay muted loop>
 					<source src="/zenith/video/videobg5.mp4" type="video/mp4"></source>
 				</video> */}
-      <Parallax bgImage="/zenith/images/aWELhk8A.jpeg" blur={{ min: -1, max: 3 }} strength={0}>
+      <Parallax bgImage="/zenith/images/aWELhk8A.jpeg" strength={0}>
 
-      <div className="" style={{paddingTop: '60px'}}>
+      <div className="" style={{paddingTop: '50px'}}>
         <div>
         <div className="wrapper2">
 

@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Link } from "react-router-dom";
 import { Element } from "react-scroll";
 import { Parallax } from 'react-parallax';
+import "../../styles/font.css"
 
 
 function Action() {
@@ -13,14 +14,14 @@ function Action() {
         className="background"
         alt="action"
       > */}
-      <Parallax bgImage="/zenith/images/aWELhk8A.jpeg" blur={{ min: -1, max: 3 }} strength={0}>
+      <Parallax bgImage="/zenith/images/aWELhk8A.jpeg" strength={0}>
 
-      <div className="" style={{ paddingTop: "30px" }}>
+      <div className="" style={{ paddingTop: "50px" }}>
         <div className="wrapper2">
           <div
             className="container2"
             data-aos="fade-up"
-            data-aos-duration="1000"
+            data-aos-duration="1500"
           >
             <h1
               className="titreA medium letterSpacing marginStop"

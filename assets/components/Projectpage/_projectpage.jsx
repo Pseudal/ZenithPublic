@@ -7,6 +7,7 @@ import ProjectpageFive from './_projectpageFive';
 import ProjectpageSix from './_projectpageSix';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import "../../styles/font.css"
 
 function Projectpage() {
 	const { id } = useParams();
