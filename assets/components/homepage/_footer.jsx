@@ -3,11 +3,15 @@ import { Link } from "react-router-dom";
 import { Element } from 'react-scroll';
 import { Parallax } from 'react-parallax';
 import "../../styles/font.css"
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+
 
 function Footer() {
 	const [values, setValues] = useState({
 		email: '',
 	});
+	const MySwal = withReactContent(Swal)
 
 	const handleEmailInputChange = (event) => {
 		event.persist();
@@ -21,6 +25,12 @@ function Footer() {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
+		e.target.children[1].disabled = true;
+		MySwal.fire(
+			'Merci!',
+			'Votre email à bien été enregistré',
+			'success'
+		  )
 		const requestOptions = {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
@@ -49,12 +59,25 @@ function Footer() {
 					<div className="demibloc2">
 						<div className="parent4">
 							<div className="divC">
-								<img className="center" src="/zenith/images/wX2LCIT.png" alt="" width="220" />
-								<p className="titreF light letterSpacingXS">ZENITH <br /> VAL D’EUROPE <br /> HELLO@AGENCEZENITH.COM <br /> 06.11.86.65.80.</p>
+								<img className="center mb-5" src="/zenith/images/wX2LCIT.png" alt="" width="220" />
+								<ul className='ul2'>
+									<li className='li2 mt-3'>
+										<a href="" className="footerText light text-h5">ZENITH</a>
+									</li>
+									<li className='li2'>
+										<a href="" className="footerText light text-h5"> VAL D’EUROPE </a>
+									</li>
+									<li className='li2'>
+										<a href="" className="footerText light text-h5">HELLO@AGENCEZENITH.COM</a>
+									</li>
+									<li className='li2'>
+										<a href="" className="footerText light text-h5">06.11.86.65.80</a>
+									</li>
+								</ul>
 							</div>
 
 							<div className="divD">
-								<h4 className="titreD medium letterSpacing marginBottom">REJOIGNEZ <br /> L’AVENTURE</h4>
+								<h4 className="titreD medium letterSpacing marginBottom" style={{marginTop:"20px"}}>REJOIGNEZ <br /> L’AVENTURE</h4>
 								<div className="rs2 centerFlex center">
       						<a className="fb2" href='https://www.facebook.com/AGENCEZENITH/'></a>
       						<a className="insta2" href='https://www.instagram.com/agencezenith/?hl=fr'></a>
