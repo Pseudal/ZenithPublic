@@ -54,8 +54,8 @@ function Projectpage() {
 				}
 				if(thisRes){
 					for(let i = 0; i < thisRes.length; i++){
-						console.log(thisRes[i])
-						console.log(i)
+						// console.log(thisRes[i])
+						// console.log(i)
 						if(thisRes[i].header)
 							setHeader(thisRes[i])
 						if(thisRes[i].focus)
@@ -121,7 +121,7 @@ function Projectpage() {
 				<ProjectpageTwo data={items}></ProjectpageTwo>
 				<ProjectpageThree data={second}></ProjectpageThree>
 				<ProjectpageFour preci={preci} data2={items}></ProjectpageFour>
-				<ProjectpageFive></ProjectpageFive>
+				<ProjectpageFive images={images}></ProjectpageFive>
 				<ProjectpageSix data={items} np={NextPrev}></ProjectpageSix>
 				</>
 			);

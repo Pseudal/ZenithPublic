@@ -13,8 +13,8 @@ function ProjectpageSix({data, np}) {
 		return (
 			<>
 
-					<div className='demiblocOpacity'>
-						<div className='containerCenter marginTopS'>
+					<div style={{backgroundImage: "url(/zenith/images/6Wvemm3K.jpeg)"}} className='demiblocOpacity'>
+						<div className='containerCenter marginTopS' style={{marginTop:"0"}}>
 						<h4 className='medium centerText'>UN TÉMOIGNAGE</h4>
 						<div className='light centerText' dangerouslySetInnerHTML={{__html:data.temoignage}}></div>
 						</div>

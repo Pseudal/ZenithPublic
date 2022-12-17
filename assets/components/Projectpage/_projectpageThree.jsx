@@ -7,10 +7,8 @@ function ProjectpageThree(data) {
 		return (
 			<>
 
-				<div className='wrapperDarkBlueClient'>
-					<div className='containerFlex'>
-						<img className='contain' src={"/images/imageprojet/" + data.data.image} alt=""/>
-					</div>
+				<div className='wrapperDarkBlueClient' style={{height:"800px", width:"100%"}}>
+					<img src={"/images/imageprojet/" + data.data.image} alt="" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
 				</div>
 			</>
 		);

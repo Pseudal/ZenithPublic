@@ -8,7 +8,7 @@ function ProjectpageFour({preci, data2}) {
 	if(data2.focus){
 		return (
 			<>
-			<div style={{backgroundImage: "url(/zenith/images/x9nes5V.jpg)"}} className="background">	
+			<div style={{backgroundImage: "url(/zenith/images/6Wvemm3K.jpeg)"}} className="background">	
 			<div className='opacityBlue'>
 				<div className='wrapper2'>
 					<div className='containerCenterA'>
