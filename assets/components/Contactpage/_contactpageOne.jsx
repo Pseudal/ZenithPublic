@@ -3,9 +3,12 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { Link } from "react-router-dom";
 import "../../styles/font.css"
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 
 
 function ContactPageOne() {
+	const MySwal = withReactContent(Swal)
 	const [values, setValues] = useState({
 		email: '',
 		name: '',
@@ -13,7 +16,6 @@ function ContactPageOne() {
 	});
 
 	const handleInputChange = (event) => {
-		console.log(event)
 		event.persist();
 		setValues({
 			...values,
@@ -24,7 +26,22 @@ function ContactPageOne() {
 	};
 
 	const handleSubmit = (e) => {
+		e.target.children[3].disabled = true;
 		e.preventDefault();
+		MySwal.fire({
+			text: 'Un mail de confirmation vous a été envoyé',
+			toast: true,
+			icon: 'success',
+			title: 'Bien reçu!',
+			position: 'top-right',
+			showConfirmButton: false,
+			timer: 3000,
+			timerProgressBar: true,
+			didOpen: (toast) => {
+			  toast.addEventListener('mouseenter', Swal.stopTimer)
+			  toast.addEventListener('mouseleave', Swal.resumeTimer)
+			}
+		  });
 		const requestOptions = {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
@@ -92,7 +109,13 @@ function ContactPageOne() {
 										<label for="name" className="form__label">Votre besoin</label>
 
 									</div>
-									<input type="submit" className="textDeco" value="Submit"/>
+									<button
+									style={{marginTop:"50px"}}
+										type="submit"
+										className="marginBottom2 btnS light letterSpacingM"
+									>
+										Envoyer
+									</button>
 								</form>
 							</div>
 

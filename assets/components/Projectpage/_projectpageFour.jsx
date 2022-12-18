@@ -8,8 +8,8 @@ function ProjectpageFour({preci, data2}) {
 	if(data2.focus){
 		return (
 			<>
-			<div style={{backgroundImage: "url(/zenith/images/6Wvemm3K.jpeg)"}} className="background">	
-			<div className='opacityBlue'>
+			<div style={{backgroundImage: "url(/zenith/images/6Wvemm3K.jpeg)", height: "1100px"}} className="background">	
+			<div className='opacityBlue'style={{ height: "1100px"}}>
 				<div className='wrapper2'>
 					<div className='containerCenterA'>
 
@@ -20,8 +20,8 @@ function ProjectpageFour({preci, data2}) {
 							<div className='light containerCenterClient text-h5' style={{ textTransform: 'uppercase'}} dangerouslySetInnerHTML={{__html:data2.focus}}></div>
 						</div>
 
-						<div className=' boxClient'>
-							<img className=' contain' style={{ objectFit:"cover"}} src={"/images/imageprojet/" + preci.image} alt=""/>
+						<div className=' boxClient' style={{height: '800px', width:"600px"}}>
+							<img className=' contain' style={{ width: "100%", height: "100%", objectFit: "cover" }} src={"/images/imageprojet/" + preci.image} alt=""/>
 						</div>
 					</div>
 					</div>
