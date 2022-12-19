@@ -6,7 +6,7 @@ import "../../styles/font.css"
 function Instaflux() {let insta = useRef(null);
   useEffect(() => {
     const script = document.createElement("script");
-    script.src = "https://cdn.lightwidget.com/widgets/lightwidget.js";
+    script.src = "https://cdn.lightwidget.com/widgets/lightwidget.js"
     script.async = true;
     document.body.appendChild(script);
 
@@ -49,7 +49,7 @@ function Instaflux() {let insta = useRef(null);
               <div
                 ref={insta}
                 className="containerCenterFlex"
-                style={{ marginLeft: "10%", marginRight: "10%" }}
+                style={{ display:"flex", justifyContent:"center", alignItems:"center", paddingTop:"50px"}}
               >
                 {/* <div className="Rectangle1" ></div>
           <div className="Rectangle2"></div>
@@ -73,12 +73,12 @@ function Instaflux() {let insta = useRef(null);
           <div className="Rectangle14"></div>
           <div className="Rectangle15"></div>  */}
                 <iframe
-                  src="//lightwidget.com/widgets/f2c83bb613395c9fa7bd7a355247d3cf.html" 
+                  src="//lightwidget.com/widgets/530c590c66cf5ffa844ded751a6a4cd5.html"
                   scrolling="no"
                   allowtransparency="true"
                   className="lightwidget-widget"
                   width="100%"
-                  style={{width:"100%"}}
+                  style={{width:"70%", border:"0"}}
                 ></iframe>
               </div>
               <h4

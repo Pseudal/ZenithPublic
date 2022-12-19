@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Parallax } from 'react-parallax';
 import "../../styles/font.css"
+import "../../styles/arrow.css"
 
 function Vision()  {
 
@@ -18,7 +19,7 @@ function Vision()  {
 
       <div className="" style={{paddingTop: '50px'}}>
       <div data-aos="zoom-in" data-aos-mirror="true"data-aos-once="false"data-aos-anchor-placement="top-center"data-aos-duration="1500">
-        <div className="wrapper" style={{height:"1000px"}}>
+        <div className="wrapper" style={{height:"850px"}}>
           <h1 className="titreA medium letterSpacing marginStop" data-aos="fade-up" data-aos-duration="1000">VISION</h1>
           <h6 className="light letterSpacingS sousTitre" data-aos="fade-up" data-aos-duration="1000">UNE RENCONTRE QUI CHANGE TOUT</h6>
 
@@ -47,6 +48,7 @@ function Vision()  {
                       <li className="visionText light text-h4">DIRECTION D'EXPLOITATION</li>
                       <li className="visionText light text-h4">DÉVELOPPEMENT COMMERCIAL </li>
                       </ul>
+                      <img id="arrow" style={{position:"absolute", top:"50%", left:"75%", width:"100px"}} src="/zenith/images/arrows-right.png" alt="" />
                       
                   </div>
                 </div>
@@ -55,7 +57,7 @@ function Vision()  {
               <SwiperSlide className="swiperSlide">
                 <div className="slider__contents">
                   <div className="parent3">
-
+                  <img id="arrow2" style={{position:"absolute", top:"50%", left:"0%", width:"100px"}} src="/zenith/images/arrows-right.png" alt="" />
                       <div className="visionBox">
                         <img style={{width: '100%', height: '100%', objectFit: 'cover'}}src="https://static.wixstatic.com/media/94b255_74885d374cf84214899c9df60d653638~mv2.jpg/v1/fill/w_284,h_371,al_c,q_80,usm_1.20_1.00_0.01,enc_auto/AVATAR%20RON%20B.jpg" alt="" />
                       </div>
