@@ -9,7 +9,7 @@ function ProjectpageFour({preci, data2}) {
 		return (
 			<>
 			<div style={{backgroundImage: "url(/zenith/images/6Wvemm3K.jpeg)", height: "1100px"}} className="background">	
-			<div className='opacityBlue'style={{ height: "1100px"}}>
+			<div className=''style={{ height: "1100px"}}>
 				<div className='wrapper2'>
 					<div className='containerCenterA'>
 

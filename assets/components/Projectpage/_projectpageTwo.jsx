@@ -8,7 +8,7 @@ function ProjectpageTwo(data) {
 		return (
 			<>
 				<div style={{backgroundImage: "url(/zenith/images/6Wvemm3K.jpeg)"}} className='demiblocClient'>
-					<div className='demiblocClientOpacity'>
+					<div className=''>
 						<div className='parentClient'>
 							{data.data.demande &&
 							<div className='clientGrid1'>

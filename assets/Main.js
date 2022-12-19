@@ -11,6 +11,7 @@ import Projectpage from './components/Projectpage/_projectpage';
 import SearchPage from './components/SearchPage/_SearchPage';
 import SearchPage2 from './components/SearchPage2/_SearchPage2'; 
 import "./stylesheets/bulma/grid/columns.sass" 
+import "./stylesheets/bulma/helpers/spacing.sass";
 import "./styles/font.css"
 
 const Main = () => {

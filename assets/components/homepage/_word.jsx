@@ -5,7 +5,6 @@ import "swiper/css";
 import { Parallax } from "react-parallax";
 import "../../stylesheets/bulma/helpers/spacing.sass";
 import "../../styles/font.css";
-import "../../stylesheets/bulma/helpers/spacing.sass";
 
 const Wordpage = ({}) => {
   return (
