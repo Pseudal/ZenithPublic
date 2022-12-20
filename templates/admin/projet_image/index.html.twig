@@ -136,8 +136,9 @@
     <h1 class="title text-center m-3">Toutes les images </h1>
 
     {% if projet_images %}
-        
-        <ul>
+    <div >
+       
+        <ul class="d-flex justify-content-center align-items-center flex-wrap">
             {% for projet_image in projet_images %}
 
 
@@ -219,7 +220,7 @@
 
             {% endfor %} 
             </ul>
-
+        </div>
                 <script>
                     function ajaxaction(id, route, type, img){
                         $.ajax({

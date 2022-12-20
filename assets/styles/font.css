@@ -1,7 +1,8 @@
-html{
-    font-family: 'Futura PT';
-}
-body{
-  font-family: 'Futura PT';
-  color: white;
+@font-face {
+  font-family: 'futura_ptlight';
+  src: url('./futurapt-light-webfont.woff2') format('woff2'),
+       url('./futurapt-light-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
 }

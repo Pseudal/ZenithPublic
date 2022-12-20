@@ -21,8 +21,8 @@ function ProjectpageFive(images) {
     return (
       <>
         <Parallax bgImage="/zenith/images/Z1zIJCKk.jpeg" strength={800}>
-          <div className="wrapper" style={{height:"1500px"}}>
-            <div className="parentClientView"style={{height:"1200"}}>
+          <div className="wrapper" style={{marginBottom:"100px"}}>
+            <div className="parentClientView" style={{paddingTop:"90px", paddingBottom:"90px"}}>
               <div className="clientGridView1">
                 <div className="boxFlex">
                   {images.images[0] ? (
@@ -132,8 +132,8 @@ function ProjectpageFive(images) {
                 </div>
               </div>
             </div>
-              <div className="columns is-mobile is-centered" style={{ width: "100%"}}>            
-                <button onClick={() => setOpen(true)} className="btnS center light letterSpacingM marginBottom2 mb-6">
+              <div className="columns is-mobile is-centered mt-5-fullhd" style={{ width: "100%"}}>            
+                <button onClick={() => setOpen(true)} className="btnS center light letterSpacingM mb-6 mt-0">
                   EN VOIR +
                 </button>
               </div>  
