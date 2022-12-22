@@ -7,7 +7,7 @@ function ProjectpageTwo(data) {
 	if(data.data.demande || data.data.defi || data.data.action){
 		return (
 			<>
-				<div style={{backgroundImage: "url(/zenith/images/6Wvemm3K.jpeg)"}} className='demiblocClient'>
+				<div style={{backgroundImage: "url(/zenith/images/6Wvemm3K.jpeg)", textAlign: "center"}} className='demiblocClient'>
 					<div className=''>
 						<div className='parentClient'>
 							{data.data.demande &&

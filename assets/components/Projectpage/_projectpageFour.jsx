@@ -21,7 +21,7 @@ function ProjectpageFour({preci, data2}) {
 						</div>
 
 						<div className=' boxClient' style={{height: '800px', width:"600px"}}>
-							<img className=' contain' style={{ width: "100%", height: "100%", objectFit: "cover" }} src={"/images/imageprojet/" + preci.image} alt=""/>
+							{preci.image ? (<img className=' contain' style={{ width: "100%", height: "100%", objectFit: "cover" }} src={"/images/imageprojet/" + preci.image} alt=""/>) : (<div style={{display:"flex", alignItems:"center", justifyContent:"center", width:"100%", height:"100%"}}><img style={{width:"50%"}} src={"/zenith/autre/noImg.png"} alt=""/></div>)}
 						</div>
 					</div>
 					</div>
