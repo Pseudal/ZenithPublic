@@ -27,7 +27,7 @@ function ProjectpageFive(images) {
           <div style={{width:"100%",height:"100%", display:"flex",justifyContent:"center"}}>
 
             <div className="columns is-centered" style={{height:"90%",width:"80%", paddingTop:"50px"}}>
-              <div className="column is-one-third" style={{background:"#02111D", border:"1px solid"}}>
+              <div className="column is-one-third" style={{background:"#02111D", padding:"0", padding:"0"}}>
               {images.images[0] ? (
                     <img
                       className=" "
@@ -35,6 +35,7 @@ function ProjectpageFive(images) {
                         width: "100%",
                         height: "100%",
                         objectFit: "cover",
+                        padding:"0"
                       }}
                       src={"/images/imageprojet/" + images.images[0].image}
                       alt=""
@@ -44,7 +45,7 @@ function ProjectpageFive(images) {
 
               <div className="column is-one-third columns is-multiline mx-5">
 
-                  <div className="column is-full my-5" style={{background:"#02111D", border:"1px solid"}}>                  
+                  <div className="column is-full my-5" style={{background:"#02111D", padding:"0"}}>                  
                     {images.images[1] ? (
                       <img
                         className=""
@@ -52,13 +53,14 @@ function ProjectpageFive(images) {
                           width: "100%",
                           height: "100%",
                           objectFit: "cover",
+                          padding:"0"
                         }}
                         src={"/images/imageprojet/" + images.images[1].image}
                         alt=""
                       />
                     ) : (<div style={{display:"flex", alignItems:"center", justifyContent:"center", width:"100%", height:"100%"}}><img style={{width:"50%"}} src={"/zenith/autre/noImg.png"} alt=""/></div>)}
                   </div>
-                  <div className="column is-full my-5" style={{background:"#02111D", border:"1px solid"}}>                    
+                  <div className="column is-full my-5" style={{background:"#02111D", padding:"0"}}>                    
                     {images.images[2] ? (
                         <img
                           className=""
@@ -66,6 +68,7 @@ function ProjectpageFive(images) {
                             width: "100%",
                             height: "100%",
                             objectFit: "cover",
+                            padding:"0"
                           }}
                           src={"/images/imageprojet/" + images.images[2].image}
                           alt=""
@@ -74,7 +77,7 @@ function ProjectpageFive(images) {
                     </div>
               </div>
 
-              <div className="column is-one-third is-mobile" style={{background:"#02111D", border:"1px solid"}}>
+              <div className="column is-one-third is-mobile" style={{background:"#02111D", padding:"0"}}>
               {images.images[3] ? (
                       <img
                         className=""
@@ -82,6 +85,7 @@ function ProjectpageFive(images) {
                           width: "100%",
                           height: "100%",
                           objectFit: "cover",
+                          padding:"0"
                         }}
                         src={"/images/imageprojet/" + images.images[3].image}
                         alt=""
@@ -90,7 +94,7 @@ function ProjectpageFive(images) {
               </div>
             </div>
           </div>
-            <div className="columns is-mobile is-centered mt-5-fullhd" style={{position: "absolute", bottom:"25px", width:"100%"}}>            
+            <div className="columns is-mobile is-centered mt-5-fullhd" style={{position: "absolute", bottom:"25px", width:"101%"}}>            
               <button onClick={() => setOpen(true)} className="btnS center light letterSpacingM mb-6 mt-0">
                 EN VOIR +
               </button>

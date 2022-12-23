@@ -8,26 +8,26 @@ function ProjectpageTwo(data) {
 		return (
 			<>
 				<div style={{backgroundImage: "url(/zenith/images/6Wvemm3K.jpeg)", textAlign: "center"}} className='demiblocClient'>
-					<div className=''>
-						<div className='parentClient'>
+					<div className='columns'>
+						<div className='column columns is-centered is-11 is-offset-1'>
 							{data.data.demande &&
-							<div className='clientGrid1'>
+							<div className='column is-centered is-4' style={{marginTop:"48px", marginRight:"auto", marginLeft:"auto"}}>
 								<h4 className='light'>UNE DEMANDE</h4>
-								<div className='light containerCenterClient' dangerouslySetInnerHTML={{__html:data.data.demande}}></div>
+								<div style={{width:"105%"}} className='light containerCenterClient px-6'dangerouslySetInnerHTML={{__html:data.data.demande}}></div>
 							</div> 
 							}
 
 							{data.data.defi &&
-							<div className='clientGrid2'>
+							<div className='column is-centered is-4' style={{marginTop:"48px", marginRight:"auto", marginLeft:"auto"}}>
 								<h4 className='light'>UN DÉFI</h4>
-								<div className='light containerCenterClient' dangerouslySetInnerHTML={{__html:data.data.defi}}></div>
+								<div style={{width:"105%"}} className='light containerCenterClient columns is-vcentered is-centered px-6' dangerouslySetInnerHTML={{__html:data.data.defi}}></div>
 							</div>
 							}
 
 							{data.data.action &&
-							<div className='clientGrid3'>
+							<div className='column is-centered is-4'  style={{marginTop:"48px", marginRight:"auto", marginLeft:"auto"}}>
 								<h4 className='light'>UNE ACTION</h4>
-								<div className='light containerCenterClient' dangerouslySetInnerHTML={{__html:data.data.action}}></div>
+								<div style={{width:"105%"}} className='light containerCenterClient columns is-vcentered is-centered px-6' dangerouslySetInnerHTML={{__html:data.data.action}}></div>
 							</div>
 							}
 

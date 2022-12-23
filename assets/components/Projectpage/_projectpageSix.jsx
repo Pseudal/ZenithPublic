@@ -26,13 +26,13 @@ function ProjectpageSix({data, np}) {
 						<div className='parentClientNextPrev'>
 
 							{np[1][0] &&
-								<div className='ClientNextPrev1' onClick={()=>{location.href = "/projet/"+ np[1][0].id}}>
+								<div className='ClientNextPrev1' onClick={()=>{location.href = "/projet/"+ np[1][0].id}} style={{cursor: "pointer"}}>
 									<h6 className='light rightText marginTopS'>PROJET PRÉCÉDENT</h6>
 									<h5 className='rightText'>{np[1][0].projet}</h5>
 									<h6 className='light rightText'>{np[1][0].mission}</h6>
 								</div>}
 
-							{np[0][0] && <div className='ClientNextPrev2' onClick={()=>{location.href = "/projet/"+ np[0][0].id}}>
+							{np[0][0] && <div className='ClientNextPrev2' onClick={()=>{location.href = "/projet/"+ np[0][0].id}} style={{cursor: "pointer"}}>
 									<h6 className='light leftText marginTopS'>PROJET SUIVANT</h6>
 									<h5 className='leftText'>{np[0][0].projet}</h5>
 									<h6 className='light leftText'>{np[0][0].mission}</h6>

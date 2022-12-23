@@ -166,7 +166,7 @@ function WorkpageOne(cat) {
                         aria-controls="panel1d-content"
                         id="panel1d-header"
                       >
-                        <p style={{ marginTop: "5px" }}>CATÉGORIE</p>
+                        <p style={{ marginTop: "5px" }}>&nbsp;CATÉGORIE</p>
                       </AccordionSummary>
                       <AccordionDetails>{menu}</AccordionDetails>
                     </Accordion>
