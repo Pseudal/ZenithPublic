@@ -6,46 +6,79 @@ import LinesBottom from '../_linesBottom';
 import WorkpageClientTwo from './_workpageClientTwo';
 
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import "../../styles/font.css"
 
 
 function WorkpageClient() {
+	const { nbr } = useParams();
 	const [error, setError] = useState(null);
 	const [isLoaded, setIsLoaded] = useState(false);
-	const [isLoadedImg, setIsLoadedImg] = useState(false);
+	const [isCountLoaded, setIsCountLoaded] = useState(false);
+	const [isCatLoaded, setIsCatLoaded] = useState(false);
 	const [isLoadedNextPrev, setIsLoadedNextPrev] = useState(false);
 	const [isImgReady, setImgReady] = useState(false);
 	const [items, setItems] = useState([]);
-	const [images, setImages] = useState([]);
-	const [header, setHeader] = useState([]);
-	const [preci, setPreci] = useState([]);
-	const [second, setSecond] = useState([]);
-	const [display, setDisplay] = useState([]);
-	const [NextPrev, setNextPrev] = useState([]);
-		useEffect(() => {
+	const [cat, setCat] = useState([]);
+	const [count, setCount] = useState([]);
+	useEffect(() => {
 
-			fetch(`/gettAllClient/`,{method:'GET',headers:{Accept: 'application/json','Content-Type': 'application/json'}})
-			.then(res => res.json())
-			.then(
-				(result) => {
-				setItems(result);
-				setIsLoaded(true);
-				},
-				// Note: it's important to handle errors here
-				// instead of a catch() block so that we don't swallow
-				// exceptions from actual bugs in components.
-				(error) => {
-				setIsLoaded(true);
-				setError(error);
-				console.log(error);
-				}
-			)
-		}, [])
+		fetch(`/gettAllClient/${nbr}`,{method:'GET',headers:{Accept: 'application/json','Content-Type': 'application/json'}})
+		.then(res => res.json())
+		.then(
+			(result) => {
+			setItems(result);
+			setIsLoaded(true);
+			console.log(result);
+			},
+			// Note: it's important to handle errors here
+			// instead of a catch() block so that we don't swallow
+			// exceptions from actual bugs in components.
+			(error) => {
+			setIsLoaded(true);
+			setError(error);
+			console.log(error);
+			}
+		)
+
+		fetch(`/getCount/client`,{method:'GET',headers:{Accept: 'application/json','Content-Type': 'application/json'}})
+		.then(res => res.json())
+		.then(
+			(result) => {
+			setCount(result);
+			setIsCountLoaded(true);
+			},
+			// Note: it's important to handle errors here
+			// instead of a catch() block so that we don't swallow
+			// exceptions from actual bugs in components.
+			(error) => {
+			setIsCountLoaded(true);
+			setError(error);
+			console.log(error);
+			}
+		)
+		fetch(`/api/categories`,{method:'GET',headers:{Accept: 'application/json','Content-Type': 'application/json'}})
+		.then(res => res.json())
+		.then(
+			(result) => {
+			setCat(result);
+			setIsCatLoaded(true);
+			},
+			// Note: it's important to handle errors here
+			// instead of a catch() block so that we don't swallow
+			// exceptions from actual bugs in components.
+			(error) => {
+			setIsCountLoaded(true);
+			setError(error);
+			console.log(error);
+			}
+		)
+	}, [])
 
 	if (error) {
 		 return <div>Error: {error.message}</div>;
 	  } else if (!isLoaded ) {
-		return <div>dbfgbfg...</div>;
+		return <div>Loading...</div>;
 	  } else {
 			return (  
 		<>
@@ -54,8 +87,8 @@ function WorkpageClient() {
 		<LinesTop></LinesTop>
 		<LinesBottom></LinesBottom>
 		
-		<WorkpageClientOne></WorkpageClientOne>
-		<WorkpageClientTwo data={items}></WorkpageClientTwo>
+		<WorkpageClientOne cat={cat}></WorkpageClientOne>
+		<WorkpageClientTwo data={items} page={nbr} count={count}></WorkpageClientTwo>
 		{/* <WorkpageThree></WorkpageThree>
 		<WorkpageFour></WorkpageFour>
 		<WorkpageFive></WorkpageFive>

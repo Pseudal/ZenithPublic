@@ -104,7 +104,7 @@
         }
     </style>
     
-    <a class="btn btn-primary position-absolute" style="top: 75px; left: 10px;" {% if from %} href="{{ path('admin_projet_fromClient_index', {'id': clientid }) }}" {% else %}  href="{{ path('admin_projet_index') }}"  {% endif %}><i class="fas fa-arrow-left"></i></a>
+    <a class="btn btn-primary position-absolute" style="top: 75px; left: 10px;" {% if from %} href="{{ path('admin_projet_fromClient_index', {'id': id }) }}" {% else %}  href="{{ path('admin_projet_index') }}"  {% endif %}><i class="fas fa-arrow-left"></i></a>
 
     <h1 class="title text-center m-3">Images du projet : {{projet.projet}} </h1>
 
@@ -264,12 +264,13 @@
 
                 </script>
 
-            <button class="btn btn-danger"id="btnlol">Supprimer les images</button>
+            <a class="btn btn-primary m-5 float-start" href="{{ path('admin_projetImage_new', {'id': projet.id }) }}">Create new</a>
+            <button class="btn btn-danger float-end m-5"id="btnlol">Supprimer les images</button>
             </div>
         </div>
         </tbody>
     </table>
-    <a class="btn btn-primary ms-2" href="{{ path('admin_projetImage_new', {'id': id }) }}">Create new</a>
+    
     {% else %}
         <div class="alert alert-danger container text-center" role="alert">
             <h4 class="alert-danger">Oups!</h4>

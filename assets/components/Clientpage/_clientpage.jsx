@@ -49,8 +49,11 @@ function Clientpage() {
 				let thisRes = JSON.parse(result)
 				setIsLoadedImg(true);
 				setImages(JSON.parse(result));
+				console.log(result)
 				if(thisRes){
-					for(let i = 0; i < Object.keys(thisRes).length; i++){
+					for(let i = 0; i < thisRes.length; i++){
+						// console.log(thisRes[i])
+						// console.log(i)
 						if(thisRes[i].header)
 							setHeader(thisRes[i])
 						if(thisRes[i].focus)
@@ -59,8 +62,10 @@ function Clientpage() {
 							setSecond(thisRes[i])
 						// if(images[i].visible)
 						// 	setDisplay(...images[i])
-						if(Object.keys(thisRes).length-1 == i || result == "[]")
+						if(thisRes.length-1 == i){
 							setImgReady(true)
+						}
+							
 					}
 				}
 				},

@@ -32,7 +32,7 @@ const Main = () => {
         
           <Route exact path="/" element={<Home />} />
           <Route exact path="/projets/:nbr" element={<Workpage />} />
-          <Route exact path="/clients" element={<WorkpageClient />} />
+          <Route exact path="/clients/:nbr" element={<WorkpageClient />} />
           <Route exact path="/contact" element={<ContactPage />} />
           <Route exact path="/client/:id" element={<ClientPage />} />
           <Route exact path="/projet/:id" element={<Projectpage />} />

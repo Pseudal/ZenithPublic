@@ -82,7 +82,7 @@ function Instaflux() {let insta = useRef(null);
                 ></iframe>
               </div>
               <h4
-                style={{marginTop:"100px"}}
+                style={{marginTop:"100px", marginBottom:"6vh"}}
                 className="light letterSpacing container center marginTopXL"
                 data-aos="fade-up"
                 data-aos-duration="1000"

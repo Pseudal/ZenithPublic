@@ -115,9 +115,9 @@ function WorkpageOne(cat) {
   AOS.init();
   category.forEach((element) => {
     let item = (
-		<a style={{textDecoration: "none", color: "white"}} href={`/searchcat/${element.id}/${element.categorie}`}>
+		<a key={element.id} style={{textDecoration: "none", color: "white"}} href={`/searchcat/${element.id}/${element.categorie}`}>
 			<p
-			key={element.id}
+			
 			style={{ display: "block", textAlign: "center",textDecoration: "none", color: "white"}}
 			className="light"
 		>

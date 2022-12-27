@@ -94,7 +94,7 @@ function Satisfaction() {
         
 
 
-          <h4 className="titreB light letterSpacing container center accroche marginBottom2" data-aos="fade-up" data-aos-duration="1000">LE RESTE ON L’ÉCRIRA ENSEMBLE</h4>
+          <h4 className="titreB light letterSpacing container center accroche marginBottom2" style={{marginBottom:"6vh"}} data-aos="fade-up" data-aos-duration="1000">LE RESTE ON L’ÉCRIRA ENSEMBLE</h4>
 
         </div>
 

@@ -112,4 +112,14 @@ class ClientRepository extends ServiceEntityRepository
             ->getArrayResult();
         ;
     }
+    
+    public function getAllPagination($value)
+    {
+        return $this->createQueryBuilder('c')
+         ->orderBy('c.id', 'DESC')
+         ->getQuery()
+         ->setFirstResult(($value-1)*20)
+         ->setMaxResults(20)
+         ->getArrayResult();
+    }
 }

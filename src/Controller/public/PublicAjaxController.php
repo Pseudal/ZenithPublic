@@ -55,12 +55,15 @@ class PublicAjaxController extends AbstractController
     }
 
     #[Route('/getCount/{target}', name: 'getCount', methods: ['GET'])]
-    public function getCount(ProjetImageRepository $clientImageRepository, Request $request, ProjetRepository $client,Session $session): Response
+    public function getCount(ProjetImageRepository $clientImageRepository, Request $request, ProjetRepository $projet, ClientRepository $client,Session $session): Response
     {
         $target = $request->get('target');
         $count = 0;
         try {
             if($target == "projet"){
+                $count = $projet->getCount();
+            }
+            if($target == "client"){
                 $count = $client->getCount();
             }
 
@@ -421,11 +424,12 @@ class PublicAjaxController extends AbstractController
         }
         return new JsonResponse(false);    
     }
-    #[Route('/gettAllClient', name: 'gettAllClient', methods: ['GET'])]
+    #[Route('/gettAllClient/{id}', name: 'gettAllClient', methods: ['GET'])]
     public function gettAllClient(ClientImageRepository $clientImageRepository, Request $request, ClientRepository $client,Session $session): Response
     {
+        $id = $request->get('id');
         try {
-            $next = $client->getAll();
+            $next = $client->getAllPagination($id);
             $i = 0;
             foreach($next as $n){
 
@@ -443,10 +447,10 @@ class PublicAjaxController extends AbstractController
             }
 
         } catch (\Throwable $th) {
-            
+            dd($th);
             return new JsonResponse($th);
         }
-        return new JsonResponse($next);    
+        return new JsonResponse($next);      
     }
 
     #[Route('/getsearchcat/{search}', name: 'getSearchcat', methods: ['GET'])]

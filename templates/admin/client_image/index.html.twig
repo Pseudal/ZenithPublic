@@ -150,7 +150,7 @@
                 
             <div class="modal fade" id="exampleModal{{projet_image.id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg modal-dialog-centered">
-                    <div class="modal-content">
+                    <div class="modal-content bg-dark text-white">
                     <div class="modal-header">
                         <h5 class="modal-title text-center" id="exampleModalLabel">{{projet_image.image}}</h5>
                         <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
@@ -166,7 +166,7 @@
 
                 <div class="modal fade" id="OptionModal{{projet_image.id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
-                        <div class="modal-content">
+                        <div class="modal-content bg-dark text-white">
                         <div class="modal-header">
                             <h5 class="modal-title text-center" id="exampleModalLabel">{{projet_image.image}}</h5>
                             <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
@@ -251,12 +251,13 @@
 
                 </script>
 
-            <button class="btn btn-danger"id="btnlol">Supprimer les images</button>
+            <a class="btn btn-primary m-5 float-start" href="{{ path('admin_clientImage_new', {'id': id }) }}">Create new</a>
+            <button class="btn btn-danger float-end m-5"id="btnlol">Supprimer les images</button> 
             </div>
         </div>
         </tbody>
     </table>
-    <a class="btn btn-primary ms-2" href="{{ path('admin_clientImage_new', {'id': id }) }}">Create new</a>
+
     {% else %}
         <div class="alert alert-danger container text-center" role="alert">
             <h4 class="alert-danger">Oups!</h4>
