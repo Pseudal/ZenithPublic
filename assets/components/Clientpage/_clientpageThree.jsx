@@ -6,7 +6,7 @@ import "../../styles/font.css"
 
 function ClientpageThree(data) {
 	console.log(data)
-	if(data.length > 0){
+	if(data.data.image !== undefined){
 		return (
 			<>
 				<div className='wrapperDarkBlueClient' style={{height:"800px", width:"100%"}}>

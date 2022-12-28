@@ -49,14 +49,14 @@ function Clientpage() {
 				let thisRes = JSON.parse(result)
 				setIsLoadedImg(true);
 				setImages(JSON.parse(result));
-				console.log(result)
+				console.log(thisRes)
 				if(thisRes){
 					for(let i = 0; i < thisRes.length; i++){
 						// console.log(thisRes[i])
 						// console.log(i)
 						if(thisRes[i].header)
 							setHeader(thisRes[i])
-						if(thisRes[i].focus)
+						if(thisRes[i].imageprecision)
 							setPreci(thisRes[i])
 						if(thisRes[i].secondaire)
 							setSecond(thisRes[i])
@@ -106,7 +106,7 @@ function Clientpage() {
 
 	if (error) {
 		 return <div>Error: {error.message}</div>;
-	  } else if (!isLoaded && !isImgReady && !isLoadedNextPrev) {
+	  } else if (!isLoaded || !isImgReady || !isLoadedNextPrev) {
 		return <div>Loading...</div>;
 	  } else {
 			return ( 
@@ -116,7 +116,7 @@ function Clientpage() {
 				<ClientpageTwo data={items}></ClientpageTwo>
 				<ClientpageThree data={second}></ClientpageThree>
 				<ClientpageFour preci={preci} data2={items}></ClientpageFour>
-				<ClientpageFive></ClientpageFive>
+				<ClientpageFive images={images}></ClientpageFive>
 				<ClientpageSix data={items} np={NextPrev}></ClientpageSix>
 				</>
 			);

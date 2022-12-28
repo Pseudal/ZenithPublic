@@ -420,6 +420,7 @@ class PublicAjaxController extends AbstractController
             if($images == "[]")
                 return new JsonResponse(false);
         } catch (\Throwable $th) {
+            dd($th);
             return new JsonResponse(false);
         }
         return new JsonResponse(false);    
@@ -447,7 +448,6 @@ class PublicAjaxController extends AbstractController
             }
 
         } catch (\Throwable $th) {
-            dd($th);
             return new JsonResponse($th);
         }
         return new JsonResponse($next);      
