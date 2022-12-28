@@ -54,6 +54,17 @@ class ProjetRepository extends ServiceEntityRepository
        ;
    }
 
+   public function findByClientArray($value): array
+   {
+       return $this->createQueryBuilder('c')
+           ->andWhere('c.client = :val')
+           ->setParameter('val', $value)
+           ->orderBy('c.id', 'ASC')
+           ->getQuery()
+           ->getArrayResult()
+       ;
+   }
+
    public function findOneBySomeField($value): ?Projet
    {
        return $this->createQueryBuilder('c')

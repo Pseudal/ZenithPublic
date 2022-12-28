@@ -6,110 +6,110 @@ import { Element } from "react-scroll";
 import { Parallax } from 'react-parallax';
 import "../../styles/font.css"
 
-function Creation(item) {
+function Clientpage6_5(item) {
   let slider = []
   console.log(item)
   if(item.item.length >0) {
     item.item.forEach(element => {
-      console.log(element);
-      let newSlider = undefined
-      if(element.creation){
-          newSlider = (
-            <SwiperSlide key={element.id} className="swiperSlide2">
-              <a
-                href={`/projet/${element.id}`}
-                style={{ textDecoration: "none", color: "white" }}
-              >
-                <div
-                  className="boxCréation"
-                  onMouseOut={(e) => RemoveBlurDetail(e)}
-                  onMouseOver={(e) => BlurDetail(e)}
+        console.log(element);
+        let newSlider = undefined
+        if(element.header){
+            newSlider = (
+              <SwiperSlide key={element.id} className="swiperSlide2">
+                <a
+                  href={`/projet/${element.id}`}
+                  style={{ textDecoration: "none", color: "white" }}
                 >
                   <div
-                    style={{
-                      width: "200px",
-                      height: "100%",
-                      position: "absolute",
-                    }}
+                    className="boxCréation"
+                    onMouseOut={(e) => RemoveBlurDetail(e)}
+                    onMouseOver={(e) => BlurDetail(e)}
                   >
-                    <p
+                    <div
                       style={{
-                        pointerEvents: "none",
-                        display: "none",
                         width: "200px",
-                        textAlign: "center",
+                        height: "100%",
                         position: "absolute",
-                        left: "0px",
-                        top: "200px",
                       }}
                     >
-                      {element.mission}
-                    </p>
+                      <p
+                        style={{
+                          pointerEvents: "none",
+                          display: "none",
+                          width: "200px",
+                          textAlign: "center",
+                          position: "absolute",
+                          left: "0px",
+                          top: "200px",
+                        }}
+                      >
+                        {element.mission}
+                      </p>
+                    </div>
+                    <img
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                      }}
+                      src={`/images/imageprojet/${element.header}`}
+                      alt=""
+                    />
                   </div>
-                  <img
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                    }}
-                    src={`/images/imageprojet/${element.creation}`}
-                    alt=""
-                  />
-                </div>
-              </a>
-            </SwiperSlide>
-          );            
-      }else{
-          newSlider = (
-            <SwiperSlide key={element.id} className="swiperSlide2">
-              <a
-                href={`/projet/${element.id}`}
-                style={{ textDecoration: "none", color: "white" }}
-              >
-                <div
-                  className="boxCréation"
-                  onMouseOut={(e) => RemoveBlurDetail(e)}
-                  onMouseOver={(e) => BlurDetail(e)}
-                  style={{
-                      background: "#02111D",}}
+                </a>
+              </SwiperSlide>
+            );            
+        }else{
+            newSlider = (
+              <SwiperSlide key={element.id} className="swiperSlide2">
+                <a
+                  href={`/projet/${element.id}`}
+                  style={{ textDecoration: "none", color: "white" }}
                 >
                   <div
+                    className="boxCréation"
+                    onMouseOut={(e) => RemoveBlurDetail(e)}
+                    onMouseOver={(e) => BlurDetail(e)}
                     style={{
-                      width: "200px",
-                      height: "100%",
-                      position: "absolute",
-                    }}
+                        background: "#02111D",}}
                   >
-                    <p
+                    <div
                       style={{
-                        pointerEvents: "none",
-                        display: "none",
                         width: "200px",
-                        textAlign: "center",
+                        height: "100%",
                         position: "absolute",
-                        left: "0px",
-                        top: "200px",
                       }}
                     >
-                      {element.mission}
-                    </p>
+                      <p
+                        style={{
+                          pointerEvents: "none",
+                          display: "none",
+                          width: "200px",
+                          textAlign: "center",
+                          position: "absolute",
+                          left: "0px",
+                          top: "200px",
+                        }}
+                      >
+                        {element.mission}
+                      </p>
+                    </div>
+                    <img
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "contain",
+                      }}
+                      src={"/zenith/autre/noImg.png"}
+                      alt=""
+                    />
                   </div>
-                  <img
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "contain",
-                    }}
-                    src={"/zenith/autre/noImg.png"}
-                    alt=""
-                  />
-                </div>
-              </a>
-            </SwiperSlide>
-          );            
-      }
-      slider.push(newSlider) 
-  });
+                </a>
+              </SwiperSlide>
+            );            
+        }
+        slider.push(newSlider) 
+    });
   }else{
     slider = ( <h1 className="titreA medium letterSpacing marginStop">rien a voir</h1> )
   }
@@ -133,29 +133,22 @@ function Creation(item) {
       {/* <Element name="scroll-to-element4" className="element"></Element> */}
       <Parallax bgImage="/zenith/images/Z1zIJCKk.jpeg" strength={800}>
 
-      <div className="" style={{paddingTop: '50px'}}>
+      <div className="" style={{paddingTop: '50px',paddingBottom: '75px'}}>
         <div
-          data-aos="zoom-in"
-          data-aos-mirror=""
-          data-aos-once="false"
-          data-aos-anchor-placement=""
-          data-aos-duration="1500"
+        //   data-aos="zoom-in"
+        //   data-aos-mirror=""
+        //   data-aos-once="false"
+        //   data-aos-anchor-placement=""
+        //   data-aos-duration="1500"
         >
           <div className="wrapper2">
-            <h1
-              className="titreA medium letterSpacing marginStop"
-              data-aos="fade-up"
-              data-aos-duration="1000"
+            <h3
+              className="titreA medium letterSpacing marginStop mb-5"
+            //   data-aos="fade-up"
+            //   data-aos-duration="1000"
             >
-              CRÉATION
-            </h1>
-            <h6
-              className="light letterSpacingS sousTitre"
-              data-aos="fade-up"
-              data-aos-duration="1000"
-            >
-              UNE HISTOIRE. UN ENJEU. UNE RÉPONSE.
-            </h6>
+              PROJETS LIÉS
+            </h3>
 
             <Swiper
             style={{height: '500px'}}
@@ -177,8 +170,8 @@ function Creation(item) {
                 },
               }}
               className="swiper2"
-              data-aos="fade-up"
-              data-aos-duration="1000"
+            //   data-aos="fade-up"
+            //   data-aos-duration="1000"
             >
               {slider}
               {/* <SwiperSlide className="swiperSlide2">
@@ -203,20 +196,7 @@ function Creation(item) {
               <div className="boxCréation" onMouseOut={(e) => RemoveBlurDetail(e)} onMouseOver={(e) => BlurDetail(e)}><div style={{ width: "200px", height: "100%", position: "absolute"}}><p style={{pointerEvents: "none", display: "none", width: "200px", textAlign:"center",position:"absolute", left: "0px", top:"200px"}}>{item.item[5].mission}</p></div><img style={{ width: "100%", height: "100%", objectFit: "cover" }} src={`/zenith/images/DIA_0759.jpg`} alt="" /></div>
               </SwiperSlide> */}
             </Swiper>
-            <div
-              data-aos="fade-up"
-              data-aos-duration="1000">
-            <h4
-              className="titreB light letterSpacing container center accroche"
-            >
-              PROPULSER L’IMAGINAIRE PLUS LOIN
-            </h4>
-            <button
-              className="marginBottom2 btnS center light letterSpacingM"
-            >
-              <Link to="/projets/1" className="textDeco">
-                 DÉCOUVRIR +</Link>
-            </button>
+            <div>
             </div>
           </div>
         </div>
@@ -225,34 +205,4 @@ function Creation(item) {
     </>
   );
 }
-
-export default Creation;
-
-// const items = ['', '', '', '', '', '','','','','','','',]
-// const setting = {
-//   dragSpeed: 0.4,
-//   itemWidth: 200,
-//   itemHeight: 464,
-//   itemSideOffsets: 40,
-// }
-// const itemStyle = {
-//   width: `${setting.itemWidth}px`,
-//   height: `${setting.itemHeight}px`,
-//   margin: `0px ${setting.itemSideOffsets}px`
-// }
-
-{
-  /* <div className='containerC'>
-              <Carousel _data={items} {...setting}>
-                {
-                  items.map((i, _i) => (
-                    <div
-                      key={_i}
-                      className='item'
-                      style={{ ...itemStyle }}>
-                    </div>
-                  ))
-                }
-              </Carousel>
-            </div> */
-}
+export default Clientpage6_5;

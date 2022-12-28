@@ -14,9 +14,9 @@ function Action() {
         className="background"
         alt="action"
       > */}
-      <Parallax bgImage="/zenith/images/aWELhk8A.jpeg" strength={0}>
+      {/* <Parallax bgImage="/zenith/images/aWELhk8A.jpeg" strength={0}> */}
 
-      <div className="" style={{ paddingTop: "50px" }}>
+      <div className="" style={{ paddingTop: "50px", backgroundImage: "url(/zenith/images/aWELhk8A.jpeg)", height:"auto", paddingBottom: "1px"}}>
         <div className="wrapper2">
           <div
             className="container2"
@@ -139,14 +139,14 @@ function Action() {
             >
               AGIR ET RÉAGIR AVEC VOUS
             </h4>
-            <button className="btnS center light letterSpacingM marginBottom2">
+            <button onClick={() => {document.location = "/clients/1"}} className="btnS center light letterSpacingM marginBottom2">
               EN COMPRENDRE +
             </button>
           </div>
         </div>
       </div>
       {/* </div> */}
-      </Parallax>
+      {/* </Parallax> */}
     </>
   );
 }

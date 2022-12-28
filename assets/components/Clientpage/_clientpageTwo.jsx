@@ -52,7 +52,7 @@ function ClientpageTwo(data) {
 			<>
 				<div style={{backgroundImage: "url(/zenith/images/6Wvemm3K.jpeg)", textAlign: "center"}} className='demiblocClient'>
 					<div className='columns'>
-						<div className='column columns is-centered is-11 is-offset-1'>
+						<div className='column columns is-centered is-12' style={{ margin:"0", padding:"0"}}>
 							{data.data.enjeu &&
 							<div className='column is-centered is-4' style={{marginTop:"48px", marginRight:"auto", marginLeft:"auto"}}>
 								<h4 className='light'>UN ENJEU</h4>

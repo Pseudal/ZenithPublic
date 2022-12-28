@@ -15,9 +15,9 @@ function Vision()  {
 				</video> */}
       {/* <div style={{backgroundImage: "url(/zenith/images/x9nes5V.jpg)"}} className='background'> */}
 
-      <Parallax bgImage="/zenith/images/aWELhk8A.jpeg" strength={0}>
+      {/* <Parallax bgImage="/zenith/images/aWELhk8A.jpeg" strength={0}> */}
 
-      <div className="" style={{paddingTop: '50px'}}>
+      <div className="" style={{paddingTop: '50px', backgroundImage: "url(/zenith/images/aWELhk8A.jpeg)", height:"auto", paddingBottom: "1px"}}>
       <div data-aos="zoom-in" data-aos-mirror="true"data-aos-once="false"data-aos-anchor-placement="top-center"data-aos-duration="1500">
         <div className="wrapper" style={{height:"850px"}}>
           <h1 className="titreA medium letterSpacing marginStop" data-aos="fade-up" data-aos-duration="1000">VISION</h1>
@@ -85,7 +85,7 @@ function Vision()  {
       </div>
     </div>
     </div>
-    </Parallax>
+    {/* </Parallax> */}
 			</>
 		);
 	}

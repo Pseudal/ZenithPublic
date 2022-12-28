@@ -51,7 +51,7 @@ function ClientpageFive(images) {
               <div className="column is-one-third columns is-multiline mx-5">
 
                   <div className="column is-full my-5" style={{background:"#02111D", padding:"0"}}>                  
-                    {arrayImage[0] ? (
+                    {arrayImage[1] ? (
                       <img
                         className=""
                         style={{
@@ -66,7 +66,7 @@ function ClientpageFive(images) {
                     ) : (<div style={{display:"flex", alignItems:"center", justifyContent:"center", width:"100%", height:"100%"}}><img style={{width:"50%"}} src={"/zenith/autre/noImg.png"} alt=""/></div>)}
                   </div>
                   <div className="column is-full my-5" style={{background:"#02111D", padding:"0"}}>                    
-                    {arrayImage[0] ? (
+                    {arrayImage[2] ? (
                         <img
                           className=""
                           style={{
@@ -83,7 +83,7 @@ function ClientpageFive(images) {
               </div>
 
               <div className="column is-one-third is-mobile" style={{background:"#02111D", padding:"0"}}>
-              {arrayImage[0] ? (
+              {arrayImage[3] ? (
                       <img
                         className=""
                         style={{

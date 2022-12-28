@@ -41,8 +41,8 @@ function Footer() {
 	};
 		return (
 			<>
-			    <Parallax bgImage="/zenith/images/nxsX0oGc.jpeg" strength={0}>
-
+			    {/* <Parallax bgImage="/zenith/images/nxsX0oGc.jpeg" strength={0}> */}
+				<div style={{backgroundImage: "url(/zenith/images/nxsX0oGc.jpeg)", height:"auto", paddingBottom: "1px"}}>
 				<div id="footer" className="demiblocFooter" alt="footer">
       		        <div className="demibloc2" >
 						<div className="emptyS"></div>
@@ -117,9 +117,9 @@ function Footer() {
 					</div>
 				</div>
           
+			</div>
 
-
-			</Parallax>
+			{/* </Parallax> */}
 			</>
 		);
 	}

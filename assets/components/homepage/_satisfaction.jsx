@@ -41,9 +41,9 @@ function Satisfaction() {
       <video playsInline autoPlay muted loop>
 					<source src="/zenith/video/videobg5.mp4" type="video/mp4"></source>
 				</video> */}
-      <Parallax bgImage="/zenith/images/aWELhk8A.jpeg" strength={0}>
+      {/* <Parallax bgImage="/zenith/images/aWELhk8A.jpeg" strength={0}> */}
 
-      <div className="" style={{paddingTop: '50px'}}>
+      <div className="" style={{paddingTop: '50px', backgroundImage: "url(/zenith/images/aWELhk8A.jpeg)", height:"auto", paddingBottom: "1px"}}>
         <div>
         <div className="wrapper2">
 
@@ -100,7 +100,7 @@ function Satisfaction() {
 
       </div>
       </div>
-      </Parallax>
+      {/* </Parallax> */}
 
 			</>
 		);

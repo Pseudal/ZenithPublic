@@ -25,6 +25,35 @@ use Symfony\Component\Mime\Email;
 
 class PublicAjaxController extends AbstractController
 {
+    #[Route('/gettAllProjectByClient/{id}', name: 'gettAllProjectByClient', methods: ['GET'])]
+    public function gettAllProjectByClient(ProjetImageRepository $clientImageRepository, Request $request, ProjetRepository $client,Session $session): Response
+    {
+        $id = $request->get('id');
+        try {
+            $next = $client->findByClientArray($id);
+            $i = 0;
+            foreach($next as $n){
+
+                $getHeader = $clientImageRepository->checkHeader($n["id"]);
+                $n["test"] = "coucou";
+               
+                if($getHeader){
+                    $n['header'] = $getHeader->getImage();
+                    $next[$i] = $n;
+                } else { 
+                    $n['header'] = "rien a voir, circulez"; 
+                    $getHeader = 0;
+                }  
+                $i++;
+            }
+
+        } catch (\Throwable $th) {
+            dd($th);
+            return new JsonResponse($th);
+        }
+        return new JsonResponse($next);    
+    }
+
     #[Route('/gettAllProject/{id}', name: 'gettAllProject', methods: ['GET'])]
     public function gettAllProject(ProjetImageRepository $clientImageRepository, Request $request, ProjetRepository $client,Session $session): Response
     {
