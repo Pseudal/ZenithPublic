@@ -13,6 +13,7 @@ import "../../styles/font.css"
 function SearchPage2() {
 	const { info } = useParams();
 	const { name } = useParams();
+	const { type } = useParams();
 	const [error, setError] = useState(null);
 	const [isLoaded, setIsLoaded] = useState(false);
 	const [isLoadedImg, setIsLoadedImg] = useState(false);
@@ -28,7 +29,7 @@ function SearchPage2() {
 
 		useEffect(() => {
 
-			fetch(`/getsearchcat/${info}`,{method:'GET',headers:{Accept: 'application/json','Content-Type': 'application/json'}})
+			fetch(`/getsearchcat/${info}/${type}`,{method:'GET',headers:{Accept: 'application/json','Content-Type': 'application/json'}})
 			.then(res => res.json())
 			.then(
 				(result) => {

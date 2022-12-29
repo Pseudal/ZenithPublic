@@ -3,6 +3,7 @@
 namespace App\Controller\public;
 
 use App\Entity\Projet;
+use App\Entity\Client;
 use App\Entity\Categorie;
 use App\Repository\ClientRepository;
 use App\Repository\ProjetRepository;
@@ -482,48 +483,40 @@ class PublicAjaxController extends AbstractController
         return new JsonResponse($next);      
     }
 
-    #[Route('/getsearchcat/{search}', name: 'getSearchcat', methods: ['GET'])]
+    #[Route('/getsearchcat/{search}/{type}', name: 'getSearchcat', methods: ['GET'])]
     public function getSearchcat(ClientImageRepository $clientImageRepository, Request $request, ClientRepository $client,Session $session,ProjetRepository $projet,ProjetImageRepository $projetImageRepository, CategorieRepository $catrepo,EntityManagerInterface $entityManager, SerializerInterface $serializer): Response
     {    
         try {
             
             $search = [];
             $num = $request->get('search');
+            $type = $request->get('type');
             $qb = $entityManager->createQueryBuilder();
-            $qb ->select('a')
+            if($type == "client"){
+                $qb ->select('a')
+                ->from(Client::class, 'a' )
+                ->join('a.categorie', 'm')
+                ->where('m.id = :identifier')
+                ->setParameter('identifier', $num)
+            ;
+            }
+            if($type == "projet"){
+                $qb ->select('a')
                 ->from(Projet::class, 'a' )
                 ->join('a.categorie', 'm')
                 ->where('m.id = :identifier')
                 ->setParameter('identifier', $num)
             ;
-        
-        
+            }
             $next2 = $qb->getQuery()->getResult();
             //dd($next);
             $i = 0;
-         
-            // foreach($next as $n){
-            //     $getHeader = $clientImageRepository->checkHeader($n["id"]);
-            //     $n["test"] = "coucou";
-            
-            //     if($getHeader){
-            //         $n['header'] = $getHeader->getImage();
-            //         $next[$i] = $n;
-            //     } else { 
-            //         $n['header'] = "rien a voir, circulez"; 
-            //         $getHeader = 0;
-            //     }  
-            //     $i++;
-            //     array_push($n, "client"); 
-            //     array_push($search, $n); 
-            // }
-
-            //$next2 = $projet->getSearch($request->get('search'));
-            $i = 0;
 
             foreach($next2 as $n){
-                $getHeader = $projetImageRepository->checkHeader($n->getId());
-                //$n["test"] = "coucou";
+                if($type == "client")
+                    $getHeader = $clientImageRepository->checkHeader($n->getId());
+                if($type == "projet")
+                    $getHeader = $projetImageRepository->checkHeader($n->getId());
                
                 if($getHeader){
                     $header = $getHeader->getImage();
@@ -544,6 +537,7 @@ class PublicAjaxController extends AbstractController
 
         
         } catch (\Throwable $th) {
+            dd($th);
             return new JsonResponse($th);
         }
         return new JsonResponse($search);    
