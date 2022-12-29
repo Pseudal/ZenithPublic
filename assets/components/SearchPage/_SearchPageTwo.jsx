@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from "react-router-dom";
 import { Parallax } from "react-parallax";
-import "../../styles/font.css"
 
 function SearchPageTwo(data) {
 	// console.log(count)
@@ -16,25 +15,49 @@ function SearchPageTwo(data) {
 
 	
 		for (let index = 0; index < data.data.length; index++) {
-			let item = (
-			  <div key={index} className="column columns is-one-fifth is-centered">
-				<div className="is-half">
-				<a href={"/projet/" + data.data[index].id}>
-				  <div className="boxWorkpage1">
-					<p style={{ position: "absolute" }} className="textDeco">
-					  {data.data[index].mission}
-					</p>
-					<img
-					  style={{ width: "100%", height: "100%", objectFit: "cover" }}
-					  src={"/images/imageprojet/" + data.data[index].header}
-					  alt=""
-					/>
+			if(data.data[index][0] == "projet"){
+				let item = (
+				  <div key={index} className="column columns is-one-fifth is-centered">
+					<div className="is-half">
+					<a href={"/projet/" + data.data[index].id}>
+					  <div className="boxWorkpage1">
+						<p style={{ position: "absolute" }} className="textDeco">
+						  {data.data[index].mission}
+						</p>
+						{data.data[index].header !== "rien a voir, circulez" ? (<img
+						  style={{ width: "100%", height: "100%", objectFit: "cover" }}
+						  src={"/images/imageprojet/" + data.data[index].header}
+						  alt=""
+						/>) : (<img style={{width: "100%", height: "100%", objectFit: "cover"}} src={"/zenith/autre/noImg.png"} alt=""/>)}
+					  </div>
+					</a>
+					</div>
 				  </div>
-				</a>
-				</div>
-			  </div>
-			);
-			box.push(item);
+				);
+				box.push(item);
+			}
+			if(data.data[index][0] == "client"){
+				let item = (
+				  <div key={index} className="column columns is-one-fifth is-centered">
+					<div className="is-half">
+					<a href={"/client/" + data.data[index].id}>
+					  <div className="boxWorkpage1">
+						<p style={{ position: "absolute" }} className="textDeco">
+						  {data.data[index].mission}
+						</p>
+						{data.data[index].header !== "rien a voir, circulez" ? (<img
+						  style={{ width: "100%", height: "100%", objectFit: "cover" }}
+						  src={"/images/imageclient/" + data.data[index].header}
+						  alt=""
+						/>) : (<img style={{width: "100%", height: "100%", objectFit: "cover"}} src={"/zenith/autre/noImg.png"} alt=""/>)}
+						
+					  </div>
+					</a>
+					</div>
+				  </div>
+				);
+				box.push(item);
+			}
 		}
 	}else{
 		box = (<p>Vraiment désolé, nous n'avons rien trouvé :c</p>)

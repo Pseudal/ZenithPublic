@@ -1,4 +1,3 @@
- import "../styles/font.css"
 function LinesTop() {
 	let audio = new Audio("/zenith/autre/Horizon.mp3")
 

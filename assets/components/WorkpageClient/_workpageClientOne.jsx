@@ -47,7 +47,12 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
   overflow: "scroll",
 }));
 
-function WorkpageClientOne(cat) {
+function WorkpageClientOne({setLoading, cat}) {
+
+	useEffect(() => {
+		setLoading(true)
+	  }, [1]);
+
 	const [expanded, setExpanded] = React.useState("panel1");
 
 	const handleChange = (panel) => (event, newExpanded) => {
@@ -55,7 +60,7 @@ function WorkpageClientOne(cat) {
 	};
   
 	const [words, setWords] = useState([]);
-	let category = cat.cat;
+	let category = cat;
 	let menu = [];
 	let randomWord = [
 	  "RÉACTIVITÉ",
@@ -115,7 +120,7 @@ function WorkpageClientOne(cat) {
 	AOS.init();
 	category.forEach((element) => {
 	  let item = (
-		  <a key={element.id} style={{textDecoration: "none", color: "white"}} href={`/searchcat/${element.id}/${element.categorie}`}>
+		  <a key={element.id} style={{textDecoration: "none", color: "white"}} href={`/searchcat/client/${element.id}/${element.categorie}`}>
 			  <p
 			  
 			  style={{ display: "block", textAlign: "center",textDecoration: "none", color: "white"}}

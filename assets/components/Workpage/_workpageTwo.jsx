@@ -1,12 +1,7 @@
 
 import React from "react";
 import { Parallax } from "react-parallax";
-import { Link } from "react-router-dom";
 import Pagination from 'rc-pagination';
-import '../../stylesheets/bulma/grid/columns.sass';
-import '../../stylesheets/bulma/helpers/spacing.sass';
-import '../../stylesheets/pagination.less' 
-import "../../styles/font.css"
 
 
 function WorkpageTwo({data, page, count}) {

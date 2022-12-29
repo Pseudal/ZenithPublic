@@ -4,6 +4,7 @@ import LinesTop from '../_linesTop';
 import LinesBottom from '../_linesBottom';
 import ContactPageOne from './_contactpageOne';
 import "../../styles/font.css"
+import MiniFooter from '../Homepage/_miniFooter';
 
 
 
@@ -15,7 +16,7 @@ function ContactPage() {
 		<LinesTop></LinesTop>
 		<LinesBottom></LinesBottom>
 		<ContactPageOne></ContactPageOne>
-
+		<MiniFooter></MiniFooter>
 
 		</>
 	 );

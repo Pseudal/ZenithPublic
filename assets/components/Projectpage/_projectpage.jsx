@@ -7,9 +7,37 @@ import ProjectpageFive from './_projectpageFive';
 import ProjectpageSix from './_projectpageSix';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import "../../styles/font.css"
 
 function Projectpage() {
+	function fadeOut( elem, ms )
+	{
+	if( ! elem )
+		return;
+
+	if( ms )
+	{
+		var opacity = 1;
+		var timer = setInterval( function() {
+		opacity -= 50 / ms;
+		if( opacity <= 0 )
+		{
+			clearInterval(timer);
+			opacity = 0;
+			elem.style.display = "none";
+			elem.style.visibility = "hidden";
+		}
+		elem.style.opacity = opacity;
+		elem.style.filter = "alpha(opacity=" + opacity * 100 + ")";
+		}, 50 );
+	}
+	else
+	{
+		elem.style.opacity = 0;
+		elem.style.filter = "alpha(opacity=0)";
+		elem.style.display = "none";
+		elem.style.visibility = "hidden";
+	}
+	}
 	const { id } = useParams();
 	const [error, setError] = useState(null);
 	const [isLoaded, setIsLoaded] = useState(false);
@@ -109,9 +137,19 @@ function Projectpage() {
 
 	if (error) {
 		 return <div>Error: {error.message}</div>;
-	  } else if (!isLoaded || !isImgReady || !isLoadedNextPrev) {
-		return <div>Loading...</div>;
+	  } else if ((!isLoaded || !isImgReady || !isLoadedNextPrev) || document.readyState !== 'complete') {
+		return (
+			<>
+				<svg id="ReactLoader" width="200" height="200" viewBox="0 0 100 100">
+					<polyline className="line-cornered stroke-still" points="0,0 100,0 100,100" strokeWidth="10" fill="none"></polyline>
+					<polyline className="line-cornered stroke-still" points="0,0 0,100 100,100" strokeWidth="10" fill="none"></polyline>
+					<polyline className="line-cornered stroke-animation" points="0,0 100,0 100,100" strokeWidth="10" fill="none"></polyline>
+					<polyline className="line-cornered stroke-animation" points="0,0 0,100 100,100" strokeWidth="10" fill="none"></polyline>
+				</svg>
+			</>
+		);
 	  } else {
+		fadeOut(document.querySelector("#ReactLoader", 1000))
 			return ( 
 				<>
 				<Navbar></Navbar>

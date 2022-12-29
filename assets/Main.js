@@ -13,6 +13,10 @@ import SearchPage2 from './components/SearchPage2/_SearchPage2';
 import "./stylesheets/bulma/grid/columns.sass" 
 import "./stylesheets/bulma/helpers/spacing.sass";
 import "./styles/font.css"
+import "./styles/loader.css"
+import './stylesheets/bulma/grid/columns.sass';
+import './stylesheets/bulma/helpers/spacing.sass';
+import './stylesheets/pagination.less' 
 
 const Main = () => {
 

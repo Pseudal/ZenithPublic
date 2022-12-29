@@ -8,6 +8,7 @@ import WorkpageClientTwo from './_workpageClientTwo';
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "../../styles/font.css"
+import "../../styles/loader.css"
 
 
 function WorkpageClient() {
@@ -21,6 +22,14 @@ function WorkpageClient() {
 	const [items, setItems] = useState([]);
 	const [cat, setCat] = useState([]);
 	const [count, setCount] = useState([]);
+	const [load, setLoad] = useState("hidden")
+
+	const setLoading = param => {
+		if(param == true) {
+			console.log("gotcha")
+			setLoad("visible");
+		}
+	}
 	useEffect(() => {
 
 		fetch(`/gettAllClient/${nbr}`,{method:'GET',headers:{Accept: 'application/json','Content-Type': 'application/json'}})
@@ -77,8 +86,17 @@ function WorkpageClient() {
 
 	if (error) {
 		 return <div>Error: {error.message}</div>;
-	  } else if (!isLoaded ) {
-		return <div>Loading...</div>;
+	  } else if (!isLoaded || document.readyState !== 'complete') {
+		return (
+			<>
+				<svg id="ReactLoader" width="200" height="200" viewBox="0 0 100 100">
+					<polyline className="line-cornered stroke-still" points="0,0 100,0 100,100" strokeWidth="10" fill="none"></polyline>
+					<polyline className="line-cornered stroke-still" points="0,0 0,100 100,100" strokeWidth="10" fill="none"></polyline>
+					<polyline className="line-cornered stroke-animation" points="0,0 100,0 100,100" strokeWidth="10" fill="none"></polyline>
+					<polyline className="line-cornered stroke-animation" points="0,0 0,100 100,100" strokeWidth="10" fill="none"></polyline>
+				</svg>
+			</>
+		);
 	  } else {
 			return (  
 		<>
@@ -87,8 +105,9 @@ function WorkpageClient() {
 		<LinesTop></LinesTop>
 		<LinesBottom></LinesBottom>
 		
-		<WorkpageClientOne cat={cat}></WorkpageClientOne>
-		<WorkpageClientTwo data={items} page={nbr} count={count}></WorkpageClientTwo>
+		<WorkpageClientOne setLoading={setLoading} cat={cat}></WorkpageClientOne>
+		<div style={{visibility:load}}><WorkpageClientTwo data={items} page={nbr} count={count}></WorkpageClientTwo></div>
+		
 		{/* <WorkpageThree></WorkpageThree>
 		<WorkpageFour></WorkpageFour>
 		<WorkpageFive></WorkpageFive>

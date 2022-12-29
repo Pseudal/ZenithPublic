@@ -14,21 +14,21 @@ function SearchPageTwo2(data) {
 	// }
   
 	let box = [];
-	if(type == "projet"){
-		for (let index = 0; index < data.data.length; index++) {
+	for (let index = 0; index < data.data.length; index++) {
+		if(type == "projet"){
 			let item = (
 			  <div key={index} className="column columns is-one-fifth is-centered">
 				<div className="is-half">
 				<a href={"/projet/" + data.data[index].id}>
 				  <div className="boxWorkpage1">
 					<p style={{ position: "absolute" }} className="textDeco">
-					  {data.data[index].projet}
+					  {data.data[index].mission}
 					</p>
-					<img
+					{data.data[index].header !== "rien a voir, circulez" ? (<img
 					  style={{ width: "100%", height: "100%", objectFit: "cover" }}
 					  src={"/images/imageprojet/" + data.data[index].header}
 					  alt=""
-					/>
+					/>) : (<img style={{width: "100%", height: "100%", objectFit: "cover"}} src={"/zenith/autre/noImg.png"} alt=""/>)}
 				  </div>
 				</a>
 				</div>
@@ -36,22 +36,21 @@ function SearchPageTwo2(data) {
 			);
 			box.push(item);
 		}
-	}
-	if(type == "client"){
-		for (let index = 0; index < data.data.length; index++) {
+		if(type == "client"){
 			let item = (
 			  <div key={index} className="column columns is-one-fifth is-centered">
 				<div className="is-half">
-				<a href={"/projet/" + data.data[index].id}>
+				<a href={"/client/" + data.data[index].id}>
 				  <div className="boxWorkpage1">
 					<p style={{ position: "absolute" }} className="textDeco">
-					  {data.data[index].nomClient}
+					  {data.data[index].mission}
 					</p>
-					<img
+					{data.data[index].header !== "rien a voir, circulez" ? (<img
 					  style={{ width: "100%", height: "100%", objectFit: "cover" }}
-					  src={"/images/imageprojet/" + data.data[index].header}
+					  src={"/images/imageclient/" + data.data[index].header}
 					  alt=""
-					/>
+					/>) : (<img style={{width: "100%", height: "100%", objectFit: "cover"}} src={"/zenith/autre/noImg.png"} alt=""/>)}
+					
 				  </div>
 				</a>
 				</div>

@@ -1,7 +1,5 @@
 import React from 'react'
 import AOS from 'aos';
-import 'aos/dist/aos.css'; 
-import "../styles/font.css"
 
 function RsButton() {
 	AOS.init({once: true,});

@@ -49,7 +49,7 @@ function Emotion() {
               >
                 SUSCITER L’EMOTION EN UN INSTANT
               </h4>
-              <button
+              <button onClick={()=>{document.location = "/client/1"}}
                 className="marginBottom2 btnS center light letterSpacingM"
               >
                 EN VOIR +

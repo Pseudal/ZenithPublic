@@ -4,13 +4,9 @@ import RsButton from '../_rsButton';
 import LinesTop from '../_linesTop';
 import LinesBottom from '../_linesBottom';
 import WorkpageTwo from "./_workpageTwo";
-import WorkpageThree from "./_workpageThree";
-import WorkpageFour from "./_workpageFour";
-import WorkpageFive from "./_workpageFive";
-import MiniFooter from "../Homepage/_miniFooter";
 import { useEffect, useState } from "react"; 
 import { useParams } from "react-router-dom";
-import "../../styles/font.css"
+import 'aos/dist/aos.css';
 
 
 function Workpage() {
@@ -19,11 +15,17 @@ function Workpage() {
 	const [isLoaded, setIsLoaded] = useState(false);
 	const [isCountLoaded, setIsCountLoaded] = useState(false);
 	const [isCatLoaded, setIsCatLoaded] = useState(false);
-	const [isLoadedNextPrev, setIsLoadedNextPrev] = useState(false);
-	const [isImgReady, setImgReady] = useState(false);
 	const [items, setItems] = useState([]);
 	const [cat, setCat] = useState([]);
 	const [count, setCount] = useState([]);
+	const [load, setLoad] = useState("hidden")
+
+		const setLoading = param => {
+			if(param == true) {
+				console.log("gotcha")
+				setLoad("visible");
+			}
+		}
 		useEffect(() => {
 
 			fetch(`/gettAllProject/${nbr}`,{method:'GET',headers:{Accept: 'application/json','Content-Type': 'application/json'}})
@@ -80,8 +82,17 @@ function Workpage() {
 
 	if (error) {
 		 return <div>Error: {error.message}</div>;
-	  } else if (!isLoaded || !isCountLoaded|| !isCatLoaded) {
-		return <div>Loading...</div>;
+	  } else if (!isLoaded || !isCountLoaded|| !isCatLoaded || document.readyState !== 'complete') {
+		return (
+			<>
+				<svg id="ReactLoader" width="200" height="200" viewBox="0 0 100 100">
+					<polyline className="line-cornered stroke-still" points="0,0 100,0 100,100" strokeWidth="10" fill="none"></polyline>
+					<polyline className="line-cornered stroke-still" points="0,0 0,100 100,100" strokeWidth="10" fill="none"></polyline>
+					<polyline className="line-cornered stroke-animation" points="0,0 100,0 100,100" strokeWidth="10" fill="none"></polyline>
+					<polyline className="line-cornered stroke-animation" points="0,0 0,100 100,100" strokeWidth="10" fill="none"></polyline>
+				</svg>
+			</>
+		);
 	  } else {
 			return (  
 		<>
@@ -89,13 +100,9 @@ function Workpage() {
 		<RsButton></RsButton>
 		<LinesTop></LinesTop>
 		<LinesBottom></LinesBottom>
+		<WorkpageOne setLoading={setLoading} cat={cat}></WorkpageOne>
+		<div style={{visibility:load}}><WorkpageTwo  data={items} page={nbr} count={count}></WorkpageTwo></div>
 		
-		<WorkpageOne cat={cat}></WorkpageOne>
-		<WorkpageTwo data={items} page={nbr} count={count}></WorkpageTwo>
-		{/* <WorkpageThree></WorkpageThree>
-		<WorkpageFour></WorkpageFour>
-		<WorkpageFive></WorkpageFive>
-		<MiniFooter></MiniFooter> */}
 		</>
 	 );
 }

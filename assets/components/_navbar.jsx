@@ -1,8 +1,7 @@
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { Link } from "react-router-dom";
-import {useState} from 'react' 
-import "../styles/font.css"
+import {useState} from 'react'
 
 function navbar() {
 
@@ -30,7 +29,7 @@ function navbar() {
     
       <ul className="menu__box" data-aos="fade-right">
         <form onSubmit={teleport}>
-          <div className="form__group field divC1 menu__item1" >
+          <div style={{width: '75%'}} className="form__group field divC1 menu__item1" >
             <input type="input" size="15" className="form__field" placeholder="Name" id="email" value={searchInput} onChange={handleChange} required></input>
             <label htmlFor="name" className="form__label">Recherche</label>
           </div>

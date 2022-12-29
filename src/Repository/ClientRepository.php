@@ -122,4 +122,13 @@ class ClientRepository extends ServiceEntityRepository
          ->setMaxResults(20)
          ->getArrayResult();
     }
+    public function getRandom($value)
+    {
+        return $this->createQueryBuilder('c')
+         ->orderBy('c.id', 'DESC')
+         ->andWhere($this->expr()->isNotNull('c.header'))
+         ->getQuery()
+         ->setMaxResults(20)
+         ->getArrayResult();
+    }
 }

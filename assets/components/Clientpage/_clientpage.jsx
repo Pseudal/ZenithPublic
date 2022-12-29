@@ -9,6 +9,7 @@ import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import "../../styles/font.css"
 import Clientpage6_5 from './_clientpage6_5';
+import "../../styles/loader.css"
 
 function Clientpage() {
 	const { id } = useParams();
@@ -127,8 +128,17 @@ function Clientpage() {
 
 	if (error) {
 		 return <div>Error: {error.message}</div>;
-	  } else if (!isLoaded || !isImgReady || !isLoadedNextPrev || !isLoadedProject) {
-		return <div>Loading...</div>;
+	  } else if (!isLoaded || !isImgReady || !isLoadedNextPrev || !isLoadedProject || document.readyState !== 'complete') {
+		return (
+			<>
+				<svg id="ReactLoader" width="200" height="200" viewBox="0 0 100 100">
+					<polyline className="line-cornered stroke-still" points="0,0 100,0 100,100" strokeWidth="10" fill="none"></polyline>
+					<polyline className="line-cornered stroke-still" points="0,0 0,100 100,100" strokeWidth="10" fill="none"></polyline>
+					<polyline className="line-cornered stroke-animation" points="0,0 100,0 100,100" strokeWidth="10" fill="none"></polyline>
+					<polyline className="line-cornered stroke-animation" points="0,0 0,100 100,100" strokeWidth="10" fill="none"></polyline>
+				</svg>
+			</>
+		);
 	  } else {
 		console.log("items")
 		console.log(items)

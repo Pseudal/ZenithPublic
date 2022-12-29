@@ -84,14 +84,17 @@ function ContactPageOne() {
 								</Link>							
 							</div>
 
-							<div className='parent5'>
-								<div className="containerCenter2 divC4" >
+							<div className='columns is-centered'>
+								<div className="is-3 column is-offset-4" style={{maxHeigh:"100%"}}>
 									<h1 className="medium">Contactez Nous</h1> 
 									<h6 className="light">Présentez votre projet et laissez-nous vos
 									informations de contact. Nous reviendrons vers
 									vous dans un délai de 24h.</h6>
 								</div>
-								<form onSubmit={handleSubmit}>
+								<div className="is-2 column">
+
+								</div>
+								<form onSubmit={handleSubmit} className="is-7 column">
 									<div className="form__group field  divC1">
 										<input type="input" className="form__field" placeholder="Name" name="name" id='name' value={values.name}onChange={handleInputChange} required></input>
 										<label for="name" className="form__label">Votre nom</label>

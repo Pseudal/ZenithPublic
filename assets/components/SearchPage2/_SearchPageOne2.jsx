@@ -3,9 +3,12 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { Link } from "react-router-dom";
 import "../../styles/font.css"
+import { useEffect } from 'react';
 
-function SearchPageOne2(data) {
-	console.log(data)
+function SearchPageOne2({setLoading,data}) {
+	useEffect(() => {
+		setLoading(true)
+	  }, [1]);
 	AOS.init()
 		return (
 			<>
@@ -28,7 +31,7 @@ function SearchPageOne2(data) {
 						</div>
 
 						<div className="workpageText" data-aos="fade-up">
-							<h1 className="medium">RESULTAT POUR "{data.data}"</h1>
+							<h1 className="medium">RESULTAT POUR "{data}"</h1>
 							{/* <p className="light">LOGO. WEB DESIGN. CATEGORIE</p> */}
 						</div>
 

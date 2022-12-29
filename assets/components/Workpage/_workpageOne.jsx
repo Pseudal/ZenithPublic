@@ -1,16 +1,12 @@
 import React, { useEffect, useState } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import { Link } from "react-router-dom";
 import { styled } from "@mui/material/styles";
-import { Button, Menu, MenuItem, Typography } from "@mui/material";
 import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';
-import MuiAccordion, { AccordionProps } from '@mui/material/Accordion';
-import MuiAccordionSummary, {
-  AccordionSummaryProps,
-} from '@mui/material/AccordionSummary';
+import MuiAccordion from '@mui/material/Accordion';
+import MuiAccordionSummary from '@mui/material/AccordionSummary';
 import MuiAccordionDetails from '@mui/material/AccordionDetails';
-import "../../styles/font.css"
+
+
 const Accordion = styled((props) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
 ))(({ theme }) => ({
@@ -47,15 +43,19 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
   overflow: "scroll",
 }));
 
-function WorkpageOne(cat) {
+function WorkpageOne({setLoading, cat}) {
   const [expanded, setExpanded] = React.useState("panel1");
 
   const handleChange = (panel) => (event, newExpanded) => {
     setExpanded(newExpanded ? panel : false);
   };
 
+  useEffect(() => {
+    setLoading(true)
+  }, [1]);
+
   const [words, setWords] = useState([]);
-  let category = cat.cat;
+  let category = cat;
   let menu = [];
   let randomWord = [
     "RÉACTIVITÉ",
@@ -112,10 +112,9 @@ function WorkpageOne(cat) {
     let word2 = getWord();
     setWords([word1, word2]);
   }, []);
-  AOS.init();
   category.forEach((element) => {
     let item = (
-		<a key={element.id} style={{textDecoration: "none", color: "white"}} href={`/searchcat/${element.id}/${element.categorie}`}>
+		<a key={element.id} style={{textDecoration: "none", color: "white"}} href={`/searchcat/projet/${element.id}/${element.categorie}`}>
 			<p
 			
 			style={{ display: "block", textAlign: "center",textDecoration: "none", color: "white"}}

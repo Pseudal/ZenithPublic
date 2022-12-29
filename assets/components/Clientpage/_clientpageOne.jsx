@@ -30,11 +30,14 @@ function ClientpageOne(data) {
 
 						<div className='container'>	
 
-						<div className="clientpageText" data-aos="fade-up">
-							<h1 className="medium marginStop clientDetail">NOM CLIENT</h1>
-							<h6 className="light marginStop clientDetail">SECTEUR D’ACTIVITÉ</h6>
-							<p className="light clientDetail">DURÉE PROJET</p>
-							<p className="light clientDetail2">CATÉGORIE 1 | CATÉGORIE 2</p>
+						<div style={{textTransform: 'uppercase'}} className="clientpageText" data-aos="fade-up">
+						<h1 className="medium marginStop clientDetail">{data.data.nomClient}</h1>
+							<h6 className="light marginStop clientDetail">{data.data.secteur.secteur}</h6>
+							
+							{data.data.duree ? <p className="light clientDetail">DURÉE PROJET : {data.data.duree}</p> : <p className="light clientDetail">DURÉE PROJET : N/A</p>}
+							<Link style={{textDecoration: "none", color: "white"}} to={`/searchcat/client/${data.data.categorie[0].id}/${data.data.categorie[0].categorie}`}><p style={{display: "inline", textTransform: 'uppercase'}} className="light clientDetail2">{data.data.categorie[0].categorie}</p></Link>
+							
+							{data.data.categorie[1] &&<><p style={{display: "inline"}} className="light clientDetail2">   |   </p> <Link style={{textDecoration: "none", color: "white"}}to={`/searchcat/client/${data.data.categorie[1].id}/${data.data.categorie[1].categorie}`} ><p className="light clientDetail2" style={{display: "inline", textTransform: 'uppercase', textDecoration: "none", color: "white"}}>{data.data.categorie[1].categorie}</p></Link></>}
 						</div>
 						</div>
 
