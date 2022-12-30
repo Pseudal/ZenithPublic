@@ -23,9 +23,69 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Mailer\Transport;
 use Symfony\Component\Mailer\Mailer;
 use Symfony\Component\Mime\Email;
+use Doctrine\Persistence\ManagerRegistry;
 
 class PublicAjaxController extends AbstractController
 {
+    #[Route('/getSatisfaction', name: 'getSatisfaction', methods: ['GET'])]
+    public function getSatisfaction(ClientImageRepository $clientImageRepository, Request $request, ClientRepository $client,Session $session, ManagerRegistry $doctrine): Response
+    {
+        try {
+            $next = [];
+            $allId = $client->getAllId();
+            $shuffled_array = array();
+
+            $arrayLenght = count($allId)-1;
+            for ($i=$arrayLenght; $i > $arrayLenght -10; $i--) { 
+                    if($i < 0){
+                        continue;
+                    };
+                $item = $client->findOneArray($allId[$i]["id"]);
+                array_push($next, $item);
+                unset($allId[$i]);
+            };
+
+            $keys = array_keys($allId);
+            shuffle($keys);
+            foreach ($keys as $key)
+            {
+                $shuffled_array[$key] = $allId[$key];
+            };
+            $arrayLenght = count($shuffled_array)-1;
+            // dd($shuffled_array);
+            
+            for ($i=$arrayLenght; $i > $arrayLenght -20; $i--) { 
+                if($i < 0){
+                    continue;
+                };
+            $item = $client->findOneArray($shuffled_array[$i]["id"]);
+            array_push($next, $item);
+            unset($shuffled_array[$i]);
+        };
+            dd($next);
+            $i = 0;
+            foreach($next as $n){
+
+                $getHeader = $clientImageRepository->checkHeader($n["id"]);
+                $n["test"] = "coucou";
+               
+                if($getHeader){
+                    $n['header'] = $getHeader->getImage();
+                    $next[$i] = $n;
+                } else { 
+                    $n['header'] = "rien a voir, circulez"; 
+                    $getHeader = 0;
+                }  
+                $i++;
+            }
+
+        } catch (\Throwable $th) {
+            dd($th);
+            return new JsonResponse($th);
+        }
+        return new JsonResponse($next);      
+    }
+
     #[Route('/gettAllProjectByClient/{id}', name: 'gettAllProjectByClient', methods: ['GET'])]
     public function gettAllProjectByClient(ProjetImageRepository $clientImageRepository, Request $request, ProjetRepository $client,Session $session): Response
     {
