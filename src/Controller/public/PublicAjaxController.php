@@ -33,59 +33,51 @@ class PublicAjaxController extends AbstractController
         try {
             $next = [];
             $next2 = [];
-            $allId = $client->getAllId();
+            $randomizedID = [];
+            $allId = $client->getAllId(); //get all clients id
             $shuffled_array = array();
 
+            //Get last 10 registered client
             $arrayLenght = count($allId)-1;
             for ($i=$arrayLenght; $i > $arrayLenght -10; $i--) { 
                     if($i < 0){
                         continue;
                     };
-                $item = $client->findOneArray($allId[$i]["id"]);
+                $item = $client->findOneArraySatisfaction($allId[$i]["id"]);
                 array_push($next, $item[0]);
                 
                 unset($allId[$i]);
             };
 
+            //shuffle and make à new 20 array of id
             $keys = array_keys($allId);
             shuffle($keys);
             foreach ($keys as $key)
             {
                 $shuffled_array[$key] = $allId[$key];
             };
-            $arrayLenght = count($shuffled_array)-1;
-            //dd($shuffled_array);
-            
-            for ($i=$arrayLenght; $i > $arrayLenght -20; $i--) { 
+
+            foreach ($shuffled_array as $key => $value) {
+                if(count($randomizedID )> 19){
+                    continue;
+                }
+                array_push($randomizedID, $value);
+            }
+
+            for ($i=count($randomizedID)-1; $i >= 0; $i--) { 
                 if($i < 0){
                     continue;
                 };
-            $item = $client->findOneArray($shuffled_array[$i]["id"]);
-            $next2 += $item;
-            unset($shuffled_array[$i]);
-        };
-            dd($next2);
-            $i = 0;
-            foreach($next as $n){
+            $item = $client->findOneArraySatisfaction($randomizedID[$i]["id"]);
+            array_push($next2, $item[0]);
+            };
 
-                $getHeader = $clientImageRepository->checkHeader($n["id"]);
-                $n["test"] = "coucou";
-               
-                if($getHeader){
-                    $n['header'] = $getHeader->getImage();
-                    $next[$i] = $n;
-                } else { 
-                    $n['header'] = "rien a voir, circulez"; 
-                    $getHeader = 0;
-                }  
-                $i++;
-            }
 
         } catch (\Throwable $th) {
             dd($th);
             return new JsonResponse($th);
         }
-        return new JsonResponse($next);      
+        return new JsonResponse([$next,$next2]);      
     }
 
     #[Route('/gettAllProjectByClient/{id}', name: 'gettAllProjectByClient', methods: ['GET'])]

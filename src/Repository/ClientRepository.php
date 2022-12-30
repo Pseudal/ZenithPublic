@@ -72,6 +72,16 @@ class ClientRepository extends ServiceEntityRepository
             ->getArrayResult()
         ;
     }
+    public function findOneArraySatisfaction($value)
+    {
+        return $this->createQueryBuilder('c')
+            ->select("c.id", "c.logo")
+            ->andWhere('c.id = :val')
+            ->setParameter('val', $value)
+            ->getQuery()
+            ->getArrayResult()
+        ;
+    }
 
     public function getAllArray()
     {
@@ -133,17 +143,17 @@ class ClientRepository extends ServiceEntityRepository
          ->getArrayResult();
     }
 
-    public function getRandom()
-    {
-        return $this->createQueryBuilder('c')
-            ->createQuery("SELECT q FROM App\Entity\Question q ORDER BY RAND()")
-        //  ->orderBy('rand()')
-        //  ->andWhere('c.logo != :null')->setParameter('null', serialize(null)) //not null
-        //  ->andWhere('c.logo != :empty')->setParameter('empty', serialize([])) //not empty
-         ->getQuery()
-         ->setMaxResults(10)
-         ->getResult();
-    }
+    // public function getRandom()
+    // {
+    //     return $this->createQueryBuilder('c')
+    //         ->createQuery("SELECT q FROM App\Entity\Question q ORDER BY RAND()")
+    //     //  ->orderBy('rand()')
+    //     //  ->andWhere('c.logo != :null')->setParameter('null', serialize(null)) //not null
+    //     //  ->andWhere('c.logo != :empty')->setParameter('empty', serialize([])) //not empty
+    //      ->getQuery()
+    //      ->setMaxResults(10)
+    //      ->getResult();
+    // }
     public function getAllId()
     {
         return $this->createQueryBuilder('c')
