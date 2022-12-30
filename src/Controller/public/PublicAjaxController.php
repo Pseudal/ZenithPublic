@@ -32,6 +32,7 @@ class PublicAjaxController extends AbstractController
     {
         try {
             $next = [];
+            $next2 = [];
             $allId = $client->getAllId();
             $shuffled_array = array();
 
@@ -41,7 +42,8 @@ class PublicAjaxController extends AbstractController
                         continue;
                     };
                 $item = $client->findOneArray($allId[$i]["id"]);
-                array_push($next, $item);
+                array_push($next, $item[0]);
+                
                 unset($allId[$i]);
             };
 
@@ -52,17 +54,17 @@ class PublicAjaxController extends AbstractController
                 $shuffled_array[$key] = $allId[$key];
             };
             $arrayLenght = count($shuffled_array)-1;
-            // dd($shuffled_array);
+            //dd($shuffled_array);
             
             for ($i=$arrayLenght; $i > $arrayLenght -20; $i--) { 
                 if($i < 0){
                     continue;
                 };
             $item = $client->findOneArray($shuffled_array[$i]["id"]);
-            array_push($next, $item);
+            $next2 += $item;
             unset($shuffled_array[$i]);
         };
-            dd($next);
+            dd($next2);
             $i = 0;
             foreach($next as $n){
 
