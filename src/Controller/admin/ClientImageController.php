@@ -24,18 +24,13 @@ class ClientImageController extends AbstractController
     {
         $pres = [];
         $id = $request->get('id');
-        if($session->get('fromclient')){
-            $clientid = $session->get('clientid');
-        }else{
-            $clientid = 0;
-        }
 
         
-        $thisEntity = $clientImageRepository->findLast();
+        $thisEntity = $client->findOneArray($id);
         if($thisEntity){
-            $pres[1] = $clientImageRepository->checkHeader($thisEntity[0]->getClient()->getId());
-            $pres[2] = $clientImageRepository->checkSecondaire($thisEntity[0]->getClient()->getId());
-            $pres[3] = $clientImageRepository->checkFocus($thisEntity[0]->getClient()->getId());
+            $pres[1] = $clientImageRepository->checkHeader($thisEntity);
+            $pres[2] = $clientImageRepository->checkSecondaire($thisEntity);
+            $pres[3] = $clientImageRepository->checkFocus($thisEntity);
         } else {
             $pres[1] = null;
             $pres[2] = null;
@@ -44,8 +39,6 @@ class ClientImageController extends AbstractController
 
 
         return $this->render('admin/client_image/index.html.twig', [
-            'from' => $session->get('fromclient'),
-            'clientid' => $clientid,
             'projet_images' => $clientImageRepository->findByExampleField($id),
             'id' => $request->get('id'),
             'projet' => $client->findOneBySomeField($id),

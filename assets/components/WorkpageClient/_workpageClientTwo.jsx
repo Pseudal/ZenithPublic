@@ -10,7 +10,6 @@ import "../../styles/font.css"
 
 
 function WorkpageClientTwo({data, page, count}) {
-  console.log(data)
   let pageNbr = Math.ceil(count / 20)
   let nbr = parseInt(page)
   function onChange(params) {
@@ -27,7 +26,7 @@ function WorkpageClientTwo({data, page, count}) {
 					<p style={{ position: "absolute" }} className="textDeco">
 					  {data[index].mission}
 					</p>
-					{data[index].header ? (<img
+					{data[index].hasOwnProperty('header') ? (<img
 					  style={{ width: "100%", height: "100%", objectFit: "cover" }}
 					  src={"/images/imageclient/" + data[index].header}
 					  alt=""

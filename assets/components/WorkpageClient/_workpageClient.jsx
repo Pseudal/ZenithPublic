@@ -24,13 +24,15 @@ function WorkpageClient() {
 	const [cat, setCat] = useState([]);
 	const [count, setCount] = useState([]);
 	const [load, setLoad] = useState("hidden")
+	const [unload, setUnload] = useState("Visible")
 
 	const setLoading = param => {
 		if(param == true) {
-			setTimeout(() => {
+			 setTimeout(() => {
 				console.log("gotcha")
-				setLoad("visible");				
-			}, 1000);
+				setLoad("visible");		
+				setUnload("hidden");				
+			 }, 5000);
 
 		}
 	}
@@ -110,6 +112,14 @@ function WorkpageClient() {
 		<LinesBottom></LinesBottom>
 		
 		<WorkpageClientOne setLoading={setLoading} cat={cat}></WorkpageClientOne>
+		<div style={{visibility:unload, display:""}}>				
+			<svg id="ReactLoader2" width="200" height="200" viewBox="0 0 100 100">
+				<polyline className="line-cornered stroke-still" points="0,0 100,0 100,100" strokeWidth="10" fill="none"></polyline>
+				<polyline className="line-cornered stroke-still" points="0,0 0,100 100,100" strokeWidth="10" fill="none"></polyline>
+				<polyline className="line-cornered stroke-animation" points="0,0 100,0 100,100" strokeWidth="10" fill="none"></polyline>
+				<polyline className="line-cornered stroke-animation" points="0,0 0,100 100,100" strokeWidth="10" fill="none"></polyline>
+			</svg>
+		</div>
 		<div style={{visibility:load}}><WorkpageClientTwo data={items} page={nbr} count={count}></WorkpageClientTwo></div>
 		<MiniFooter style={{visibility:load}}></MiniFooter>
 		{/* <WorkpageThree></WorkpageThree>
