@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "../../styles/font.css"
 import "../../styles/loader.css"
+import MiniFooter from '../Homepage/_miniFooter';
 
 
 function WorkpageClient() {
@@ -26,8 +27,11 @@ function WorkpageClient() {
 
 	const setLoading = param => {
 		if(param == true) {
-			console.log("gotcha")
-			setLoad("visible");
+			setTimeout(() => {
+				console.log("gotcha")
+				setLoad("visible");				
+			}, 1000);
+
 		}
 	}
 	useEffect(() => {
@@ -107,7 +111,7 @@ function WorkpageClient() {
 		
 		<WorkpageClientOne setLoading={setLoading} cat={cat}></WorkpageClientOne>
 		<div style={{visibility:load}}><WorkpageClientTwo data={items} page={nbr} count={count}></WorkpageClientTwo></div>
-		
+		<MiniFooter style={{visibility:load}}></MiniFooter>
 		{/* <WorkpageThree></WorkpageThree>
 		<WorkpageFour></WorkpageFour>
 		<WorkpageFive></WorkpageFive>

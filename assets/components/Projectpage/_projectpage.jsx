@@ -7,6 +7,7 @@ import ProjectpageFive from './_projectpageFive';
 import ProjectpageSix from './_projectpageSix';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import MiniFooter from '../Homepage/_miniFooter';
 
 function Projectpage() {
 	function fadeOut( elem, ms )
@@ -161,6 +162,7 @@ function Projectpage() {
 				<ProjectpageFour preci={preci} data2={items}></ProjectpageFour>
 				<ProjectpageFive images={images}></ProjectpageFive>
 				<ProjectpageSix data={items} np={NextPrev}></ProjectpageSix>
+				<MiniFooter></MiniFooter>
 				</>
 			);
 		}

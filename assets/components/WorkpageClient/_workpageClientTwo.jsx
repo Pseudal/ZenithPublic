@@ -23,23 +23,22 @@ function WorkpageClientTwo({data, page, count}) {
         <div key={index} className="column columns is-one-fifth is-centered">
           <div className="is-half">
           <a href={"/client/" + data[index].id}>
-            <div className="boxWorkpage1">
-              <p style={{ position: "absolute" }} className="textDeco">
-                {data[index].projet}
-              </p>
-              <img
-                style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                src={"/images/imageclient/" + data[index].header}
-                alt=""
-              />
-            </div>
+				  <div className="boxWorkpage1">
+					<p style={{ position: "absolute" }} className="textDeco">
+					  {data[index].mission}
+					</p>
+					{data[index].header ? (<img
+					  style={{ width: "100%", height: "100%", objectFit: "cover" }}
+					  src={"/images/imageclient/" + data[index].header}
+					  alt=""
+					/>) : (<img style={{width: "100%", height: "100%", objectFit: "cover"}} src={"/zenith/autre/noImg.png"} alt=""/>)}
+				  </div>
           </a>
           </div>
         </div>
       );
       box.push(item);
     }
-  
   return (
     <>
     <Parallax bgImage="/zenith/images/Z1zIJCKk.jpeg" blur={{ min: -1, max: 3 }} strength={400}>

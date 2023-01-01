@@ -10,6 +10,7 @@ import { useEffect, useState } from 'react';
 import "../../styles/font.css"
 import Clientpage6_5 from './_clientpage6_5';
 import "../../styles/loader.css"
+import MiniFooter from '../Homepage/_miniFooter';
 
 function Clientpage() {
 	const { id } = useParams();
@@ -167,6 +168,7 @@ function Clientpage() {
           </div>
           <Clientpage6_5 item={Project}></Clientpage6_5>
           <ClientpageSix data={items} np={NextPrev}></ClientpageSix>
+		  <MiniFooter></MiniFooter>
         </>
       );
 		}

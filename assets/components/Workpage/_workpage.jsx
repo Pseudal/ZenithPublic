@@ -6,7 +6,7 @@ import LinesBottom from '../_linesBottom';
 import WorkpageTwo from "./_workpageTwo";
 import { useEffect, useState } from "react"; 
 import { useParams } from "react-router-dom";
-import 'aos/dist/aos.css';
+import MiniFooter from "../Homepage/_miniFooter";
 
 
 function Workpage() {
@@ -22,8 +22,11 @@ function Workpage() {
 
 		const setLoading = param => {
 			if(param == true) {
-				console.log("gotcha")
-				setLoad("visible");
+				//cache misère fouc
+				setTimeout(() => {
+					console.log("gotcha")
+					setLoad("visible");				
+				}, 1000);
 			}
 		}
 		useEffect(() => {
@@ -102,7 +105,7 @@ function Workpage() {
 		<LinesBottom></LinesBottom>
 		<WorkpageOne setLoading={setLoading} cat={cat}></WorkpageOne>
 		<div style={{visibility:load}}><WorkpageTwo  data={items} page={nbr} count={count}></WorkpageTwo></div>
-		
+		<MiniFooter style={{visibility:load}}></MiniFooter>
 		</>
 	 );
 }
