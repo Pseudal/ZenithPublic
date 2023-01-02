@@ -19,16 +19,15 @@ function Workpage() {
 	const [cat, setCat] = useState([]);
 	const [count, setCount] = useState([]);
 	const [load, setLoad] = useState("hidden")
+	const [unload, setUnload] = useState(false)
 
-		const setLoading = param => {
-			if(param == true) {
-				//cache misère fouc
-				setTimeout(() => {
-					console.log("gotcha")
-					setLoad("visible");				
-				}, 1000);
-			}
+	const setLoading = param => {
+		if(param == true) {
+			setLoad("visible");		
+			setUnload(true);				
 		}
+	}
+
 		useEffect(() => {
 
 			fetch(`/gettAllProject/${nbr}`,{method:'GET',headers:{Accept: 'application/json','Content-Type': 'application/json'}})
@@ -104,8 +103,8 @@ function Workpage() {
 		<LinesTop></LinesTop>
 		<LinesBottom></LinesBottom>
 		<WorkpageOne setLoading={setLoading} cat={cat}></WorkpageOne>
-		<div style={{visibility:load}}><WorkpageTwo  data={items} page={nbr} count={count}></WorkpageTwo></div>
-		<MiniFooter style={{visibility:load}}></MiniFooter>
+		<WorkpageTwo loaded={unload} data={items} page={nbr} count={count}></WorkpageTwo>
+		<MiniFooter loaded={unload}></MiniFooter>
 		</>
 	 );
 }

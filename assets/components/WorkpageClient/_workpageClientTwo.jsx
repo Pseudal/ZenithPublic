@@ -9,7 +9,7 @@ import '../../stylesheets/pagination.less'
 import "../../styles/font.css"
 
 
-function WorkpageClientTwo({data, page, count}) {
+function WorkpageClientTwo({data, page, count, loaded}) {
   let pageNbr = Math.ceil(count / 20)
   let nbr = parseInt(page)
   function onChange(params) {
@@ -38,35 +38,37 @@ function WorkpageClientTwo({data, page, count}) {
       );
       box.push(item);
     }
-  return (
-    <>
-    <Parallax bgImage="/zenith/images/Z1zIJCKk.jpeg" blur={{ min: -1, max: 3 }} strength={400}>
-      <div className="pt-6" alt="action">
-        <div className="pt-6">
-          <div className="">
-            <div className="columns is-multiline is-centered">
-              {box}
+    if(loaded == true){
+      return (
+        <>
+        <Parallax bgImage="/zenith/images/Z1zIJCKk.jpeg" blur={{ min: -1, max: 3 }} strength={400}>
+          <div className="pt-6" alt="action">
+            <div className="pt-6">
+              <div className="">
+                <div className="columns is-multiline is-centered">
+                  {box}
+                </div>
+                <div className="columns is-mobile is-centered" style={{ width: "100%", height: "150px"}}>            
+                  <Pagination
+                    current={nbr}
+                    onChange={onChange}
+                    pageSize={1}
+                    total={pageNbr}
+                    showTitle={false}
+                  />
+                </div>  
+                {/* <button className="btnL center light letterSpacingM">
+                  <Link to="/contact" className="textDeco">
+                    Voir plus
+                  </Link>
+                </button> */}
+              </div>
             </div>
-            <div className="columns is-mobile is-centered" style={{ width: "100%", height: "150px"}}>            
-              <Pagination
-                current={nbr}
-                onChange={onChange}
-                pageSize={1}
-                total={pageNbr}
-                showTitle={false}
-              />
-            </div>  
-            {/* <button className="btnL center light letterSpacingM">
-              <Link to="/contact" className="textDeco">
-                Voir plus
-              </Link>
-            </button> */}
           </div>
-        </div>
-      </div>
-    </Parallax>
-    </>
-  );
+        </Parallax>
+        </>
+      );
+    }
 }
  
 export default WorkpageClientTwo;

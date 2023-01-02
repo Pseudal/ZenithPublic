@@ -3,7 +3,7 @@ import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 
 
-function MiniFooter() {
+function MiniFooter(loaded) {
 	const [values, setValues] = useState({
 		email: '',
 	});
@@ -35,10 +35,10 @@ function MiniFooter() {
 		fetch('/api/emails', requestOptions)
 			.then(response => response.json())
 	};
+	if(loaded.loaded == true){
+
 		return (
 			<>
-
-
 				<div style={{backgroundImage: "url(/zenith/images/nxsX0oGc.jpeg)"}} className="demiblocFooter2" alt="footer">
 					<div className="demibloc2">
 						<div className="parent4">
@@ -106,6 +106,7 @@ function MiniFooter() {
 
 			</>
 		);
+	}
 	}
 
  

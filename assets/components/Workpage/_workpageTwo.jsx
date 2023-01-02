@@ -4,7 +4,7 @@ import { Parallax } from "react-parallax";
 import Pagination from 'rc-pagination';
 
 
-function WorkpageTwo({data, page, count}) {
+function WorkpageTwo({data, page, count, loaded}) {
   console.log(count)
   let pageNbr = Math.ceil(count / 20)
   let nbr = parseInt(page)
@@ -34,36 +34,38 @@ function WorkpageTwo({data, page, count}) {
       );
       box.push(item);
     }
-  
-  return (
-    <>
-    <Parallax bgImage="/zenith/images/Z1zIJCKk.jpeg" blur={{ min: -1, max: 3 }} strength={400}>
-      <div className="pt-6" alt="action">
-        <div className="pt-6">
-          <div className="">
-            <div className="columns is-multiline is-centered">
-              {box}
+  if(loaded){
+
+    return (
+      <>
+      <Parallax bgImage="/zenith/images/Z1zIJCKk.jpeg" blur={{ min: -1, max: 3 }} strength={400}>
+        <div className="pt-6" alt="action">
+          <div className="pt-6">
+            <div className="">
+              <div className="columns is-multiline is-centered">
+                {box}
+              </div>
+              <div className="columns is-mobile is-centered" style={{ width: "100%", height: "150px"}}>            
+                <Pagination
+                  current={nbr}
+                  onChange={onChange}
+                  pageSize={1}
+                  total={pageNbr}
+                  showTitle={false}
+                />
+              </div>  
+              {/* <button className="btnL center light letterSpacingM">
+                <Link to="/contact" className="textDeco">
+                  Voir plus
+                </Link>
+              </button> */}
             </div>
-            <div className="columns is-mobile is-centered" style={{ width: "100%", height: "150px"}}>            
-              <Pagination
-                current={nbr}
-                onChange={onChange}
-                pageSize={1}
-                total={pageNbr}
-                showTitle={false}
-              />
-            </div>  
-            {/* <button className="btnL center light letterSpacingM">
-              <Link to="/contact" className="textDeco">
-                Voir plus
-              </Link>
-            </button> */}
           </div>
         </div>
-      </div>
-    </Parallax>
-    </>
-  );
+      </Parallax>
+      </>
+    );
+  }
 }
 
 export default WorkpageTwo;
