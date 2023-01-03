@@ -131,7 +131,7 @@ function Creation(item) {
 					<source src="/zenith/video/videobg4.mp4" type="video/mp4"></source>
 				</video> */}
       {/* <Element name="scroll-to-element4" className="element"></Element> */}
-      <Parallax bgImage="/zenith/images/Z1zIJCKk.jpeg" strength={800}>
+      <Parallax bgImage="/zenith/images/Z1zIJCKk.jpeg" strength={200}>
 
       <div className="" style={{paddingTop: '50px'}}>
         <div

@@ -27,7 +27,7 @@ function Instaflux() {let insta = useRef(null);
 				</video> */}
         <Parallax
           bgImage="/zenith/images/Z1zIJCKk.jpeg"
-          strength={400}
+          strength={200}
         >
           <div
             data-aos="zoom-in"

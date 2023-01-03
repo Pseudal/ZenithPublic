@@ -5,7 +5,7 @@ import "../../styles/font.css"
 function Chiffres() {
   return (
     <>
-	<Parallax bgImage="/zenith/images/Z1zIJCKk.jpeg" strength={400}>
+	<Parallax bgImage="/zenith/images/Z1zIJCKk.jpeg" strength={200}>
       <div
         // style={{ backgroundImage: "url(/zenith/images/x9nes5V.jpg)" }}
         className="demibloc"

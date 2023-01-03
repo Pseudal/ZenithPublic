@@ -1,0 +1,23 @@
+{{ form_start(formEmotion) }}
+{{ form_errors(formEmotion) }}
+{# <div class="row mt-5 d-flex justify-content-center"> #}
+    {# <div class="card mb-3 text-center col-6 bg-dark" style="max-width: 50rem;"> #}
+        {# <div class="card-header">Footer</div>
+        <div class="card-body"> #}
+
+                <div class="row mb-4">
+                <div class="col">
+
+            <!-- Password input -->
+            <div class="form-outline mb-4 form-white">
+                    {{ form_widget(formEmotion.Video, {'attr': {'class': 'form-control'}}) }}
+                    <label class="form-label" for="footer_tel">Video</label>
+            </div>
+
+            <button class="btn btn-block btn-primary">{{ button_label|default('Save') }}</button>
+
+
+        {# </div>
+    </div> #}
+{# </div> #}
+{{ form_end(formEmotion) }}
