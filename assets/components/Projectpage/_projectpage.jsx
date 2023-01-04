@@ -162,7 +162,7 @@ function Projectpage() {
 				<ProjectpageFour preci={preci} data2={items}></ProjectpageFour>
 				<ProjectpageFive images={images}></ProjectpageFive>
 				<ProjectpageSix data={items} np={NextPrev}></ProjectpageSix>
-				<MiniFooter></MiniFooter>
+				<MiniFooter loaded={true}></MiniFooter>
 				</>
 			);
 		}

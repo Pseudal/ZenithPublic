@@ -83,7 +83,7 @@ function SearchPage() {
 		{/* <WorkpageThree></WorkpageThree>
 		<WorkpageFour></WorkpageFour>
 		<WorkpageFive></WorkpageFive>*/}
-		<MiniFooter></MiniFooter> 
+		<MiniFooter loaded={true}></MiniFooter> 
 		</>
 	 );
 }

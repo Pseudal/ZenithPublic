@@ -16,7 +16,7 @@ function ContactPage() {
 		<LinesTop></LinesTop>
 		<LinesBottom></LinesBottom>
 		<ContactPageOne></ContactPageOne>
-		<MiniFooter></MiniFooter>
+		<MiniFooter loaded={true}></MiniFooter>
 
 		</>
 	 );

@@ -28,11 +28,12 @@ function SearchPage2() {
 	const [display, setDisplay] = useState([]);
 	const [NextPrev, setNextPrev] = useState([]);
 	const [load, setLoad] = useState("hidden")
+	const [unload, setUnload] = useState(false)
 
 		const setLoading = param => {
 			if(param == true) {
-				console.log("gotcha")
-				setLoad("visible");
+				setLoad("visible");		
+				setUnload(true);				
 			}
 		}
 		useEffect(() => {
@@ -85,7 +86,7 @@ function SearchPage2() {
 		{/* <WorkpageThree></WorkpageThree>
 		<WorkpageFour></WorkpageFour>
 		<WorkpageFive></WorkpageFive>*/}
-		<MiniFooter></MiniFooter> 
+		<MiniFooter loaded={unload}></MiniFooter> 
 		</>
 	 );
 }

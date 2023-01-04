@@ -168,7 +168,7 @@ function Clientpage() {
           </div>
           <Clientpage6_5 item={Project}></Clientpage6_5>
           <ClientpageSix data={items} np={NextPrev}></ClientpageSix>
-		  <MiniFooter></MiniFooter>
+		  <MiniFooter loaded={true}></MiniFooter>
         </>
       );
 		}

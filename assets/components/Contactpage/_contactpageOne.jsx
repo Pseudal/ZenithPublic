@@ -97,19 +97,19 @@ function ContactPageOne() {
 								<form onSubmit={handleSubmit} className="is-7 column">
 									<div className="form__group field  divC1">
 										<input type="input" className="form__field" placeholder="Name" name="name" id='name' value={values.name}onChange={handleInputChange} required></input>
-										<label for="name" className="form__label">Votre nom</label>
+										<label htmlFor="name" className="form__label">Votre nom</label>
 
 									</div>
 
 									<div className="form__group2 field divC2">
 										<input type="input" className="form__field" placeholder="email" name="email" id='email' value={values.email} onChange={handleInputChange} required />
-										<label for="name" className="form__label">Votre adresse e-mail</label>
+										<label htmlFor="name" className="form__label">Votre adresse e-mail</label>
 
 									</div>
 
 									<div className="textarea__group field divC3">
 										<textarea type="input" className="form__field" placeholder="message" name="message" id='message' value={values.message} onChange={handleInputChange} required />
-										<label for="name" className="form__label">Votre besoin</label>
+										<label htmlFor="name" className="form__label">Votre besoin</label>
 
 									</div>
 									<button

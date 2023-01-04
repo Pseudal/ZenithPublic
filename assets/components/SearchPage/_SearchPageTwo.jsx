@@ -60,7 +60,14 @@ function SearchPageTwo(data) {
 			}
 		}
 	}else{
-		box = (<p>Vraiment désolé, nous n'avons rien trouvé :c</p>)
+		box = (
+			<>
+			<div>
+				<img src='/zenith/images/search_no_result.png'></img>
+				<p style={{ textAlign: "center"}}>désolé, nous n'avons rien trouvé</p>
+			</div>
+			</>
+		)
 		
 	}
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : ven. 30 déc. 2022 à 12:52
+-- Généré le : mer. 04 jan. 2023 à 23:03
 -- Version du serveur : 10.4.24-MariaDB
 -- Version de PHP : 8.1.5
 
@@ -59,6 +59,13 @@ CREATE TABLE `chiffres` (
   `photo` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `video` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `chiffres`
+--
+
+INSERT INTO `chiffres` (`id`, `collab`, `digital`, `photo`, `video`) VALUES
+(1, '1000', '2000', '3000', '4000');
 
 -- --------------------------------------------------------
 
@@ -256,7 +263,8 @@ CREATE TABLE `doctrine_migration_versions` (
 --
 
 INSERT INTO `doctrine_migration_versions` (`version`, `executed_at`, `execution_time`) VALUES
-('DoctrineMigrations\\Version20221207205507', '2022-12-07 21:55:27', 12800);
+('DoctrineMigrations\\Version20221207205507', '2022-12-07 21:55:27', 12800),
+('DoctrineMigrations\\Version20230103133536', '2023-01-04 13:21:27', 1305);
 
 -- --------------------------------------------------------
 
@@ -273,6 +281,24 @@ CREATE TABLE `emails` (
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `emotion`
+--
+
+CREATE TABLE `emotion` (
+  `id` int(11) NOT NULL,
+  `video` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `emotion`
+--
+
+INSERT INTO `emotion` (`id`, `video`) VALUES
+(1, 'E1TFZWbB36M');
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `footer`
 --
 
@@ -282,6 +308,13 @@ CREATE TABLE `footer` (
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `tel` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `footer`
+--
+
+INSERT INTO `footer` (`id`, `adresse`, `email`, `tel`) VALUES
+(1, '37 rue du docteur bourrier', 'Adrien.G@gmx.fr', '0667477218');
 
 -- --------------------------------------------------------
 
@@ -501,6 +534,12 @@ ALTER TABLE `emails`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Index pour la table `emotion`
+--
+ALTER TABLE `emotion`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Index pour la table `footer`
 --
 ALTER TABLE `footer`
@@ -571,7 +610,7 @@ ALTER TABLE `categorie`
 -- AUTO_INCREMENT pour la table `chiffres`
 --
 ALTER TABLE `chiffres`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT pour la table `client`
@@ -604,10 +643,16 @@ ALTER TABLE `emails`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT pour la table `emotion`
+--
+ALTER TABLE `emotion`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT pour la table `footer`
 --
 ALTER TABLE `footer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT pour la table `messenger_messages`
