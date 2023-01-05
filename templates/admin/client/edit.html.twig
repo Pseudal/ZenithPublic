@@ -210,7 +210,7 @@
 
                         <input type="textarea" id="focusfake" hidden/>
                     <!-- Submit button -->
-                    <button id="submit" type="submit" class="btn btn-primary btn-block mb-4">Ajouter</button>
+                    <button id="submit" type="submit" class="btn btn-warning btn-block mb-4">Editer</button>
                 </form>
             </div>
         </div>
@@ -320,7 +320,7 @@
                 addPrecedence: false,
                 maxItems: 2,
                 required: true,
-                placeholder: 'Click here to select a categorie...',
+                placeholder: 'Categorie...',
                 onChange(value) {
                     categorie = value 
                     console.log(categorie)
@@ -351,7 +351,7 @@
                 addPrecedence: false,
                 maxItems: 1,
                 required: true,
-                placeholder: 'Click here to select a secteur...',
+                placeholder: 'Secteur...',
                 onChange(value) {
                     console.log(value)
                     secteur = value 
@@ -501,7 +501,7 @@
                     Swal.fire({
                     icon: 'error',
                     title: 'Oops...',
-                    text: 'Something went wrong!',   
+                    text: 'Il y a eu un problème !',   
                     })
                 }
             });

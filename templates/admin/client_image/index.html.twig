@@ -161,7 +161,7 @@
                         <div class="modal-body d-flex justify-content-center align-items-center"><img class="img-fluid" id="ici" src="{{ vich_uploader_asset(projet_image, 'imageFile')}}" alt=""></div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
+                            <button type="button" class="btn btn-primary">Sauvegarder</button>
                         </div>
                         </div>
                     </div>
@@ -254,7 +254,7 @@
 
                 </script>
 
-            <a class="btn btn-primary m-5 float-start" href="{{ path('admin_clientImage_new', {'id': id }) }}">Create new</a>
+            <a class="btn btn-primary m-5 float-start" href="{{ path('admin_clientImage_new', {'id': id }) }}">Nouveau</a>
             <button class="btn btn-danger float-end m-5"id="btnlol">Supprimer les images</button> 
             </div>
         </div>
@@ -334,7 +334,7 @@
                             Swal.fire({
                             icon: 'error',
                             title: 'Oops...',
-                            text: 'Something went wrong!',   
+                            text: 'Il y a eu un problème !',   
                             })
                         }
                     });                    

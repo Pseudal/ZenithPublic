@@ -43,7 +43,7 @@
             </tbody>
         </table>
 
-        <button class="btn btn-primary" id="secteurid" >Create new</button>
+        <button class="btn btn-primary" id="secteurid" >Nouveau</button>
     </section>
     <section class="col-6 text-center">
         <h1>Categorie</h1>
@@ -74,7 +74,7 @@
             </tbody>
         </table>
 
-        <button class="btn btn-primary" id="categorieid">Create new</button>
+        <button class="btn btn-primary" id="categorieid">Nouveau</button>
     </section>
 </div>
 
@@ -119,7 +119,7 @@ function send (type){
         input: "text",
         showCancelButton: true,
         confirmButtonColor: "#0C56D0",
-        confirmButtonText: "Save",
+        confirmButtonText: "Sauvegarder",
         cancelButtonText: "Cancel",
         buttonsStyling: true
         }).then(function (secteur) {
@@ -150,8 +150,8 @@ function send (type){
             });
             }else{
             swal.fire(
-            "Cancelled",
-            "Canceled Note",
+            "Annulé",
+            //"Canceled Note",
             "error"
             )
             }
@@ -180,7 +180,7 @@ function sendedit(id, type, val){
         inputValue: val,
         showCancelButton: true,
         confirmButtonColor: "#0C56D0",
-        confirmButtonText: "Save",
+        confirmButtonText: "Sauvegarder",
         cancelButtonText: "Cancel",
         buttonsStyling: true
         }).then(function (secteur) {
@@ -212,8 +212,8 @@ function sendedit(id, type, val){
             });
             }else{
             swal.fire(
-            "Cancelled",
-            "Canceled Note",
+            "Annulé",
+            //"Canceled Note",
             "error"
             )
             }
@@ -258,8 +258,8 @@ function supp(id, type){
             });
             }else{
             swal.fire(
-            "Cancelled",
-            "Canceled Note",
+            "Annulé",
+            //"Canceled Note",
             "error"
             )
             }
